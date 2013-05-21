@@ -1,0 +1,6 @@
+function isDivisible(n, k) = n/k==round(n/k);
+
+function isPrime(n) = 
+  first(k=2 to floor(sqrt(n)) | isDivisible(n,k)) {ERROR} != ERROR;
+
+table PrimeNumbers = collect(n=2 to 1000 | isPrime(n)) {n};

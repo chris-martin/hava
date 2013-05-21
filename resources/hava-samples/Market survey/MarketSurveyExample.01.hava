@@ -1,0 +1,35 @@
+// Market states
+token LOW, MEDIUM, HIGH;
+States = (LOW, MEDIUM, HIGH);
+
+// State values and probabilities
+v(state) = (-80.0, 25.0, 30.0)[state:States];
+p(state) = (0.3, 0.5, 0.2)[state:States];
+
+pObsGivenState(obs, state) = (
+ (0.60, 0.30, 0.10), // obs = LOW, state = LOW to HIGH 
+ (0.25, 0.50, 0.25), // obs = MEDIUM, state = LOW to HIGH 
+ (0.10, 0.30, 0.60)  // obs = HIGH, state = LOW to HIGH 
+) [obs:States, state:States];
+
+// Bayesian update
+pStateGivenObs(state, obs) = 
+  pObsGivenState(obs, state)*p(state)/pObs(obs);
+pObs(obs) = sum(state in States) 
+  {pObsGivenState(obs, state)*p(state)};
+
+// Expected values
+expValueNoTest = max(expValueFullCommit, 0);
+expValueFullCommit = sum(state in States) {p(state)*v(state)};
+expValuePerfectInfo = sum(state in States) {p(state)*max(v(state), 0)};
+expValueWithTest = 
+  sum(obs in States){pObs(obs)*max(expValueGivenObs(obs),0)};
+expValueGivenObs(obs) = 
+  sum(state in States){v(state)*pStateGivenObs(state, obs)};
+
+// Policy variables
+maxValueOfAnyTest = expValuePerfectInfo - expValueNoTest; 
+valueOfThisTest = expValueWithTest - expValueNoTest;
+doProjectIfNoTest = expValueNoTest > 0;
+doProjectIfTest(obs) = expValueGivenObs(obs) > 0;
+private REQUEST = collect(obs in States) {doProjectIfTest(obs)}; 

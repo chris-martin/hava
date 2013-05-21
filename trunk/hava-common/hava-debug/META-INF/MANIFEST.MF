@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Created-By: 1.5.0_08 (Sun Microsystems Inc.)
+Bundle-SymbolicName: edu.gatech.hava.debug
+Bundle-Version: 1.0.0.X
+Bundle-Name: Hava Debug
+Bundle-Vendor: gatech.edu
+Export-Package: edu.gatech.hava.debug,
+ edu.gatech.hava.debug.trace
+Import-Package: edu.gatech.hava.engine,
+ edu.gatech.hava.engine.debug,
+ edu.gatech.hava.parser
+Require-Bundle: edu.gatech.hava.core;bundle-version="1.0.0.X"

@@ -1,0 +1,3 @@
+import RandomVariateGenerator;
+
+samples = collect(i=1 to 5) {rvg_Normal};

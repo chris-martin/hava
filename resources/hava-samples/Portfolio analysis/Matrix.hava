@@ -1,0 +1,208 @@
+/* 
+Contains utility functions to perform these matrix algebraic operations:
+
+- Test whether an argument is a scalar, vector or matrix.
+- Test whether a matrix is symmetric.
+- Multiplication of two vectors, or a vector and a matrix, or two 
+    matrices, or scalar and a vector or matrix.  
+    NOTE:  vector is always taken as a single list.  If it appears on
+    the right of a multiplication with a vector/matrix, it is a column 
+    vector; if it appears on the left, it is a row vector.
+- Transpose of a matrix.  Transpose of vector not supported (not needed).
+- Summation of two vectors or matrices.  
+- Summation of components of a vector.
+- Determinant of a matrix.
+- Inverse of a matrix.
+- Cholesky factorization of a (symmetric) matrix.  
+- Granulate each element of a matrix, vector or scalar. 
+- Normalize a vector so that its elements sum to one.   
+*/
+
+
+/* Test functions */
+
+final function mx_IsScalar(A) = 
+  A.valueType == INTEGER || A.valueType == REAL;
+
+final function mx_IsVector(A) = 
+  (!mx_IsScalar(A) && A[1].valueType != LIST && A.listSize > 0);
+
+final function mx_IsMatrix(A) = 
+  A.valueType == LIST
+  && A.listSize > 0
+  && A[1].valueType == LIST
+  && A[1].listSize > 0
+  && IGNORE == first(i=2 to A.listSize) {
+       if (A[i].valueType == LIST && A[i].listSize == A[1].listSize)
+         {IGNORE}
+       else
+         {ERROR}
+       };
+
+final function mx_IsSymmetric(A) = 
+  mx_IsMatrix(A) 
+  &&
+  (A.listSize == A[1].listSize)
+  && 
+  IGNORE == 
+    first(i = 2 to A.listSize, j = 1 to i-1 | A[i][j] != A[j][i]) {ERROR};
+
+
+/* Multiplication */
+
+// Returns the multplication of A times B.  A and B can be scalar, vector or matrix.
+final function mx_Multiply(A, B) = 
+  if (mx_IsScalar(A) && mx_IsScalar(B)) 
+    {_mx_ScalarMultiplyScalar(A, B)}
+  else if ((mx_IsScalar(A) && mx_IsVector(B)) 
+            || 
+           (mx_IsVector(A) && mx_IsScalar(B)))
+             {_mx_ScalarMultiplyVector(A, B)}
+  else if (mx_IsScalar(A) || mx_IsScalar(B))
+    {_mx_ScalarMultiplyMatrix(A, B)}
+  else if (mx_IsVector(A) && mx_IsVector(B)) 
+    {_mx_VectorMultiplyVector(A, B)}
+  else if (mx_IsVector(A) && !mx_IsVector(B)) 
+    {_mx_VectorMultiplyMatrix(A, B)}
+  else if (!mx_IsVector(A) && mx_IsVector(B)) 
+    {_mx_MatrixMultiplyVector(A, B)}
+  else 
+    {_mx_MatrixMultiplyMatrix(A, B)};
+
+final function _mx_ScalarMultiplyScalar(A, B) = A*B;
+
+final function _mx_ScalarMultiplyVector(A, B) = 
+  if (mx_IsVector(B)) {
+    collect(i = 1 to B.listSize) {A*B[i]}
+    }
+  else {
+    collect(i = 1 to A.listSize) {B*A[i]}
+    };
+
+final function _mx_ScalarMultiplyMatrix(A, B) = 
+  if (mx_IsMatrix(B)) {
+    collect(i = 1 to B.listSize) {
+      collect(j = 1 to B[1].listSize) {A*B[i][j]}
+      }
+    }
+  else {
+    collect(i = 1 to A.listSize) {
+      collect(j = 1 to A[1].listSize) {B*A[i][j]}
+      }
+    };
+
+final function _mx_VectorMultiplyVector(v1, v2) = 
+  sum(i = 1 to v1.listSize) {v1[i]*v2[i]};
+
+final function _mx_VectorMultiplyMatrix(v, A) = 
+  collect(j = 1 to A[1].listSize) {
+    sum(i = 1 to v.listSize) {v[i]*A[i][j]}
+      };
+
+final function _mx_MatrixMultiplyVector(A, v) = 
+  collect(i = 1 to A.listSize) {
+    sum(j = 1 to v.listSize) {A[i][j]*v[j]}
+    };
+
+final function _mx_MatrixMultiplyMatrix(A, B) = 
+  collect(i = 1 to A.listSize) {
+    collect(j = 1 to B[1].listSize) {
+      sum(k = 1 to A[1].listSize) {A[i][k]*B[k][j]}
+      }
+    };
+
+
+/* Matrix Transpose */
+
+final function mx_Transpose(A) =
+  collect(i = 1 to A[1].listSize) {
+    collect(j = 1 to A.listSize) {A[j][i]}
+    };
+
+
+/* Matrix Sum */
+
+final function mx_Sum(A, B) = 
+  if (mx_IsVector(A) && mx_IsVector(B)) {
+    collect(i = 1 to A.listSize) {A[i]+B[i]}
+    }
+  else {
+    collect(i = 1 to A.listSize) {
+      collect(j = 1 to A[1].listSize) {A[i][j] + B[i][j]}
+      }
+    };
+
+/* Vector Sum */
+
+final function mx_VectorSum(v) = sum(i = 1 to v.listSize) {v[i]};
+
+
+/* Determinant */
+
+// Using Laplace's Formula Along Column 1
+final function mx_Det(A) = 
+  if (A.listSize == 1) {A[1][1]}
+  else if (A.listSize == 2) {A[1][1]*A[2][2] - A[2][1]*A[1][2]}
+  else {
+    sum(i = 1 to A.listSize) {
+      (-1)^(i+1)*A[i][1]*mx_Det(mx_CofactorMatrix(A, i, 1))
+      }
+    };
+
+// Returns (i, j)th cofactor matrix of A
+final function mx_CofactorMatrix(A, i, j) = 
+  collect(k = 1 to A.listSize-1) {
+    collect(l = 1 to A.listSize-1) {
+      if (k < i) {if (l < j) {A[k][l]} else {A[k][l+1]}}
+      else {if (l < j) {A[k+1][l]} else {A[k+1][l+1]}}
+      }
+    };
+
+/* Matrix Inverse */
+
+// Inverts matrix A
+final function mx_Inverse(A) = 
+  collect(i = 1 to A.listSize) {
+    collect(j = 1 to A.listSize) {
+      (1/mx_Det(A))*(-1)^(i+j)*mx_MinorFactor(A, j, i)}
+    };
+
+final function mx_MinorFactor(A, i, j) = 
+  mx_Det(mx_CofactorMatrix(A, i, j));
+
+
+/* Cholesky Factorization */
+
+// Returns the unique lower diagonal matrix D such that D*(transpose of D) = A
+final function mx_Cholesky(A) = 
+  collect(i = 1 to A.listSize) {
+    collect(j = 1 to A.listSize) {_mx_Cholesky(A, i, j)}
+    };
+
+final function _mx_Cholesky(S, i, j) = 
+  if (i < j) {0}
+  else if (i == j) {
+    sqrt(S[j][j] - sum(k=1 to j-1) {_mx_Cholesky(S, i, k)^2})
+    }
+  else {
+    (S[i][j] - sum(k = 1 to j-1) {
+      _mx_Cholesky(S, i, k)*_mx_Cholesky(S, j, k)})/_mx_Cholesky(S, j, j)
+    };
+
+
+/* Granulation */
+
+// Granulates each element of matrix A by grain gr
+function mx_Granulate(A, gr) = 
+  if (mx_IsMatrix(A)) {
+    collect(i = 1 to A.listSize) {
+      collect(j = 1 to A[1].listSize) {A[i,j]:gr}
+      }
+    }
+  else if (mx_IsVector(A)) {collect(i = 1 to A.listSize) {A[i]:gr}}
+  else {A:gr};
+
+
+/* Normalization */
+
+function mx_Normalize(v) = mx_Multiply(v, 1/mx_VectorSum(v));

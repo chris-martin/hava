@@ -1,0 +1,165 @@
+/* 
+  Executes and reports analysis of:
+     - Equally weighted portfolio
+     - Minimum variance portfolio
+     - Mean-variance efficient frontier
+     - Test portfolios supplied by user
+  Statistics reported for each portfolio include:
+     - sample mean of return distribution 
+     - sample stdev of return distribution 
+     - sample mean utility of returns
+     - true mean of return distribution
+     - true stdev of return distribution
+     - sample return distribution (user specifies which points evaluated)
+  See PortfolioAnalysisSpecification.hava for asset data input.
+  See PortfolioAnalysisScenarios.hava for simulation parameter input.
+*/
+
+import Matrix;
+import PortfolioAnalysisSpecification;
+import PortfolioAnalysisScenarios;
+
+struct PA(PortfolioWeights, MeanReturn, SampleMeanReturn, Stdev, 
+           SampleStdev, MeanUtility, ReturnDist);
+                         
+
+/**
+
+
+PORTFOLIO ANALYSIS
+*/
+
+
+/**
+
+	EQUALLY WEIGHTED PORTFOLIO ANALYSIS
+
+*/
+
+function equallyWeightedPortfolio 
+  = collect(i = 1 to assets.listSize) {1/assets.listSize};
+table EWPA = pa_DoAnalysis(equallyWeightedPortfolio);
+
+
+/**
+
+	MINIMUM VARIANCE PORTFOLIO ANALYSIS
+
+*/
+
+function minimumVariancePortfolio = mx_Normalize(pa_B1);
+table MVPA = pa_DoAnalysis(minimumVariancePortfolio);
+
+
+/**
+
+	MEAN-VARIANCE EFFICIENT FRONTIER ANALYSIS
+
+*/
+
+function pa_r(i) = 
+  pa_ExpectedReturn(minimumVariancePortfolio)-1 + i*returnIncr;
+
+table MVEF(i) = pa_DoAnalysis(pa_OptWeights(pa_r(i)));
+private MVEF = collect(i=0 to numMVEFPoints) {MVEF(i)};
+
+
+// Supporting Calculations
+
+private pa_rbar = collect(a in assets) {a.mu};
+private pa_e = collect(i = 1 to assets.listSize) {1};
+private table pa_invCovMatrix = mx_Inverse(pasc_CovMatrix);
+private table pa_B1 = mx_Multiply(pa_invCovMatrix, pa_e);
+private table pa_B2 = mx_Multiply(pa_invCovMatrix, pa_rbar);
+private table pa_B = mx_Transpose(collect(pa_B1, pa_B2));
+private table pa_C = mx_Multiply(collect(pa_e, pa_rbar), pa_B);
+private table pa_M = mx_Multiply(pa_B, mx_Inverse(pa_C));
+
+private pa_OptWeights(r0) = mx_Multiply(pa_M, collect(1, r0));
+function pa_OptReturnDistn(r0) = 
+  pa_ReturnDistribution(pa_OptWeights(r0), cdfPoints);
+function pa_OptMeanReturn(r0) = 
+  pa_MeanPortfolioReturn(pa_OptWeights(r0));
+function pa_OptStdevReturn(r0) = 
+  pa_StdevPortfolioReturn(pa_OptWeights(r0));
+function pa_OptMeanUtility(r0) = 
+  pa_MeanUtility(pa_OptWeights(r0));
+
+
+/**
+		Sharpe Ratio and Tangent Portfolio of Risky Assets
+*/
+
+tangentPortfolio = mx_Normalize(pa_TP);
+SharpeRatio = 
+  (pa_ExpectedReturn(tangentPortfolio) - riskFreeRate)/
+    (pa_StdevReturn(tangentPortfolio));
+table TPA = pa_DoAnalysis(tangentPortfolio);
+
+function pa_TP = mx_Multiply(pasc_CovMatrix, pa_rhat);
+function pa_rhat = 
+  mx_Sum(pa_rbar, mx_Multiply(-riskFreeRate, pa_e));
+
+
+
+///////////////////////////////////////////////////////////
+//		SERVICE FUNCTIONS                        //
+///////////////////////////////////////////////////////////
+
+
+function pa_DoAnalysis(w) = 
+  PA(w,
+      pa_ExpectedReturn(w),
+      pa_SampleMeanReturn(w),
+      pa_StdevReturn(w), 
+      pa_SampleStdevReturn(w),
+      pa_SampleMeanUtility(w),
+      pa_ReturnDistribution(w));
+
+
+/* Portfolio Statistics */
+
+function pa_ExpectedReturn(w) = 
+  1 + mx_Multiply(w, pa_rbar);
+
+function pa_StdevReturn(w) = 
+  sqrt(mx_Multiply(w, mx_Multiply(pasc_CovMatrix, w)));
+
+
+/* Portfolio Empirical Return Distribution Statistics */
+
+private pa_PortfolioReturns(w) = 
+  mx_Multiply(pasc_ScenarioData, w);
+
+function pa_PortfolioReturns(w, s) = pa_PortfolioReturns(w)[s];
+
+function pa_SampleMeanReturn(w) = 
+  (1/numScenarios)*mx_VectorSum(pa_PortfolioReturns(w));
+
+function pa_SampleStdevReturn(w) = 
+  sqrt(pa_SampleVarianceReturn(w));
+
+function pa_SampleVarianceReturn(w) = 
+  (1/(numScenarios-1))*sum(s = 1 to numScenarios) {
+    (pa_PortfolioReturns(w, s) - pa_SampleMeanReturn(w))^2
+    };
+
+function pa_ReturnDistribution(w) = 
+  sum(s = 1 to numScenarios) {
+    (collect(i = 1 to cdfPoints.listSize) {
+      pa_PortfolioReturns(w)[s] < cdfPoints[i]})
+    };
+
+function pa_ReturnDistribution(w, cdfPoints) = 
+  collect(i = 1 to cdfPoints.listSize) {
+    (cdfPoints[i], pa_ReturnDistribution(w)[i])
+    };
+
+
+/* Expected Utility */
+
+function pa_SampleMeanUtility(w) = 
+  (1/numScenarios)*sum(s = 1 to numScenarios) {
+    U(pa_PortfolioReturns(w, s))
+    };
+

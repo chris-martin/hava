@@ -1,0 +1,67 @@
+// Tokens
+token OPERATIONAL, CONTINUE, REPAIR, FAILED, GOOD, BAD;
+
+// Parameters
+pf = 1/3;  // Probability machine fails in a period
+pe = 1/4;  // Probability of observation error in an inspection
+
+g(machineState,action) = 
+  if (action==REPAIR) {1} 
+  else if (machineState==FAILED) {2} 
+  else {0};
+
+// Decision-maker's state
+struct State(period, history);
+
+nextState(state, action, observation) = 
+  State(
+    state.period+1, 
+      join(
+      if (action==CONTINUE) 
+        {state.history} 
+      else 
+        {()}, 
+      observation
+    )
+  );
+
+prevState(state) = 
+  State(
+    state.period-1, 
+    join(period=1 to state.history.listSize-1) 
+      {state.history[period]}
+  );
+
+lastObservation(state) = state.history[state.history.listSize];
+
+// Sufficient statistic
+p(state) = 
+  if (state.history==()) {1} 
+  else if (lastObservation(state)==GOOD) 
+   {(1-pe)*(1-pf)*pp(state)/((1-pe)*(1-pf)*pp(state) + pe*(1-(1-pf)*pp(state)))} 
+  else 
+   {pe*(1-pf)*pp(state)/(pe*(1-pf)*pp(state) + (1-pe)*(1-(1-pf)*pp(state)))}; 
+
+pp(state) = p(prevState(state));
+
+// Dynamic programming
+optAction(state) = argmin(action in (CONTINUE,REPAIR)) {v(state,action)};
+v(state) = if (state.period < N) {v(state,optAction(state))} else {0};
+v(state,action) = 
+  g_(state,action) + 
+  sum(observation in(GOOD,BAD)) 
+    {p(state,action,observation)*v(nextState(state,action,observation))};
+
+g_(state,action) = p(state)*g(OPERATIONAL, action) + (1-p(state))*g(FAILED,action);
+
+p(state,action,observation) = 
+  if (action==REPAIR) 
+    {p(State(state.period, ()), CONTINUE, observation)}
+  else if (observation==GOOD) 
+    {(1-pe)*(1-pf)*p(state) + pe*(1-(1-pf)*p(state))} 
+  else 
+    {pe*(1-pf)*p(state) + (1-pe)*(1-(1-pf)*p(state))};
+
+// Kick off
+N = 3;
+SOLUTION = v(State(0, ()));

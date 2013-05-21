@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>edu.gatech.hava</groupId>
+    <artifactId>hava-common</artifactId>
+    <version>1.0.0.X</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.gatech.hava</groupId>
+  <artifactId>edu.gatech.hava.debug</artifactId>
+  <version>1.0.0.X</version>
+  <packaging>bundle</packaging>
+
+  <name>
+    Hava Debugging Tools
+  </name>
+
+  <build>
+
+    <resources>
+      <resource>
+        <directory>.</directory>
+        <includes>
+          <include>plugin.xml</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <_include>META-INF/MANIFEST.MF</_include>
+          </instructions>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.core</artifactId>
+    </dependency>
+
+    <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
+

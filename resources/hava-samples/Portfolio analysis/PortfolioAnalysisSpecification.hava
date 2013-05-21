@@ -1,0 +1,71 @@
+/**
+PORTFOLIO ANALYSIS SPECIFICATION
+
+*/
+
+
+/*
+  For each asset you must specify its
+  - name
+  - mean return
+  - stdev of return
+  You must also specify a correlation matrix.  
+  Override the defaul values provided below.   
+*/
+
+struct Asset(name, mu, stdev);
+token STOCK, BOND, REAL_ESTATE;
+
+table assets = 
+  collect(Asset(STOCK, 0.12, 0.40),
+          Asset(BOND, 0.06, 0.15),
+          Asset(REAL_ESTATE, 0.08, 0.30));
+
+table corrMatrix = 
+  collect((1, -0.10, 0.10),
+          (-0.10, 1, -0.05),
+          (0.10, -0.05, 1));
+
+
+/*
+  An empirical cumulative return distribution of each portfolio is 
+  automatically generated.  
+  - You must supply the points to be evaluated.
+  Override the default values provided below.  
+*/
+
+cdfPoints = (0.90, 1.00, 1.10);
+
+
+/*  
+  The program automatically generates a Mean-Variance Efficient Frontier 
+  of risky assets.  
+  - You must specify how many points to be calculated.
+  - The "zeroeth" point corresponds to the minimum variance portfolio.
+  - The nth point corresponds to the expected return of the minimum 
+    variance portfolio plus n times a return increment.  
+  - You must specify this increment. 
+  Override the default values provided below.  
+*/ 
+
+returnIncr = 0.005;
+numMVEFPoints = 10;
+
+/*
+  The program determines the tangent portfolio of risky assets that 
+  maximizes the Sharpe ratio.  
+  - You must specify the risk-free rate.  
+  Override the default value provided below.
+*/
+
+riskFreeRate = 0.015;
+
+/*
+  The program will compute a sample mean utility of return. 
+  - You must supply a utility function. 
+  Override the default choice of utility provided below.    
+*/
+
+token LOG_UTILITY;
+utilityFunction = LOG_UTILITY;
+function U(x) = ln(x);

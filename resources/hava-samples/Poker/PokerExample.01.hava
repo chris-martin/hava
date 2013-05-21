@@ -1,0 +1,24 @@
+token JACK, QUEEN, KING, ACE;
+FACES = (2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE);
+
+token CLUB, DIAMOND, HEART, SPADE;
+SUITS = (CLUB, DIAMOND, HEART, SPADE);
+
+struct Card(face, suit);
+
+function randomCard = Card(random(FACES), random(SUITS));
+function randomHand = collect(i=1 to handSize) {randomCard};
+handSize = 5;
+
+function isValidHand(hand) = 
+  first(i=2 to handSize, j=1 to i-1 | hand[i]==hand[j]) 
+    {ERROR} 
+  != ERROR;
+
+testHand = randomHand;
+goodHand = collect(Card(ACE, SPADE), Card(KING, SPADE), Card(QUEEN, SPADE), Card(JACK, SPADE), Card(10, SPADE));
+badHand = collect(Card(6, HEART), Card(9, DIAMOND), Card(JACK, CLUB), Card(2, SPADE), Card(6, HEART));
+
+testHandValid = isValidHand(testHand);
+goodHandValid = isValidHand(goodHand);
+badHandValid = isValidHand(badHand);

@@ -1,0 +1,13 @@
+private import PortfolioAnalysis;
+
+table single_test = pa_DoAnalysis((0.40, 0.30, 0.30));
+
+private table W = (
+   (0.70, 0.15, 0.15),
+   (0.15, 0.70, 0.15),
+   (0.15, 0.15, 0.70)
+);
+
+table multiple_test = 
+  collect(i=1 to W.listSize) 
+    {pa_DoAnalysis(W[i])};

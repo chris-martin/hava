@@ -1,0 +1,15 @@
+P = 400;     // per ounce price of gold
+I0 = 50;     // initial inventory of gold (in 000's)
+T = 10;      // lease duration (in years)
+d = 1/1.1;   // per-year discount factor
+
+// Bellman Equation
+optValue(t, I) = 
+  if (t > 0) {max(Q = 0 to I) {Value(t, I, Q)}}
+  else {0};
+
+function Value(t, I, Q) = 
+  if (I > 0) {(P*Q - 500*Q^2/I) + d*optValue(t-1, I-Q)}
+  else {0};
+
+leaseValue = optValue(T, I0);

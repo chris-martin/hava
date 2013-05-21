@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="edu.gatech.hava.hdt.views.solution.action.havaRunPopupContribution"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.hava">
+         <filter name="projectNature" value="edu.gatech.hava.hdt.nature">
+         </filter>
+         <action
+               id="edu.gatech.hava.hdt.views.solution.action.havaRunObjectAction"
+               label="Run Hava"
+               icon="icons/hava-run.png"
+               menubarPath="additions"
+               enablesFor="1"
+               class="edu.gatech.hava.hdt.runaction.HavaRunObjectAction">
+          </action>
+       </objectContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="edu.gatech.hava.hdt.views.solution.action.havaRunActionSet"
+            label="Hava"
+            visible="true">
+         <menu id="hava"
+               label="Hava">
+            <separator name="run"/>
+            <separator name="debug"/>
+         </menu>
+         <action
+               id="edu.gatech.hava.hdt.views.solution.action.havaRunEditorAction"
+               label="Run Hava"
+               menubarPath="hava/run"
+               icon="icons/hava-run.png"
+               class="edu.gatech.hava.hdt.runaction.HavaRunEditorAction">
+            <!--<selection class="org.eclipse.core.resources.IFile" name="*.hava"></selection>-->
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

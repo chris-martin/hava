@@ -1,0 +1,262 @@
+options {
+  TRACK_TOKENS=true;
+}
+
+PARSER_BEGIN(HavaSource)
+  package edu.gatech.hava.parser;
+  public class HavaSource {
+}
+PARSER_END(HavaSource)
+
+/* IMPORT-AWARE */
+
+<DEFAULT, WithinImport> SKIP :
+{
+  " "
+| "\t"
+}
+
+<DEFAULT, WithinImport> SPECIAL_TOKEN :
+{
+  <POSSIBLE_BLANK_LINE : (" ")* (["\n", "\r"]) >
+| <SINGLE_LINE_COMMENT : "//" (~["\n","\r"])* >
+| <ESCAPED_COMMENT :     "/*" ( (~["*","/"]) (~["*"])* ("*")+ )* "/">
+}
+
+<DEFAULT, WithinImport> TOKEN :
+{
+  <SEMICOLON : ";"> : DEFAULT
+| <COMMA : ",">
+}
+
+<WithinImport> TOKEN :
+{
+  < IMPORT_ADDRESS_SEGMENT : (~[" ","\t","\n","\r",",",";"])+ >
+}
+
+/* DEFAULT ONLY */
+
+TOKEN : /* KEYWORDS */
+{
+  < ELSE: "else" >
+| < FALSE: "false" >
+| < FINAL: "final" >
+| < FUNCTION: "function" >
+| < IF: "if" >
+| < IN: "in" >
+| < PRIVATE: "private" >
+| < STRUCTURE: "struct" >
+| < TABLE: "table" >
+| < TO: "to" >
+| < HTOKEN: "token" >
+| < TRUE: "true" >
+}
+
+TOKEN :
+{
+  <IMPORT : "import"> : WithinImport
+}
+
+TOKEN : /* ATOMS */
+{
+  < IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+| < INT: (<DIGIT>)+ >
+| < REAL: (<DIGIT>)+ ( "." (<DIGIT>)* (<EXPONENT>)? | <EXPONENT> ) >
+| < #EXPONENT: ["e","E"] (["+","-"])? (<DIGIT>)+ >
+| < #LETTER: ["a"-"z","A"-"Z","_"] >
+| < #DIGIT: ["0"-"9"] >
+}
+
+TOKEN :  /* SEPARATORS */
+{
+  < BAR: "|" >
+| < DOT: "." >
+| < LBRACE: "{" >
+| < LBRACKET: "[" >
+| < LPAREN: "(" >
+| < RBRACE: "}" >
+| < RBRACKET: "]" >
+| < RPAREN: ")" >
+}
+
+TOKEN :  /* OPERATORS */
+{
+  < ASSIGN: "=" >
+| < COLON: ":" >
+| < ADD: "+" >
+| < SUB: "-" >
+| < MUL: "*" >
+| < DIV: "/" >
+| < PWR: "^" >
+| < GT: ">" >
+| < LT: "<" >
+| < LE: "<=" >
+| < GE: ">=" >
+| < EQ: "==" >
+| < NE: "!=" >
+| < OR: "||" >
+| < AND: "&&" >
+| < NOT: "!" >
+}
+
+TOKEN :  /* DOC COMMENT */
+{
+  < DOC_COMMENT: "/**" ( (~["*","/"]) (~["*"])* ("*")+ )* "/" >
+}
+
+/** Main production. */
+SimpleNode Start() : {}
+{
+  ( <DOC_COMMENT> | Statement() <SEMICOLON> )* <EOF>
+  { return jjtThis; }
+}
+
+void Statement() : {}
+{
+    ( <PRIVATE> | <FUNCTION> | <FINAL> | <TABLE> )* 
+    ( TokenStatement() | StructureStatement() | LOOKAHEAD(2) ImportStatement() | AssignmentStatement() )
+}
+
+void TokenStatement() : {} 
+{
+  <HTOKEN> <IDENTIFIER> ( <COMMA> <IDENTIFIER> )* 
+}
+
+void StructureStatement() : {}
+{
+  <STRUCTURE> StructureDeclaration() ( <COMMA> StructureDeclaration() )*
+}
+
+void StructureDeclaration() : {}
+{
+  <IDENTIFIER> ParamList() 
+}
+
+void ImportStatement() : {}
+{
+  <IMPORT> ImportAddress() ( <COMMA> ImportAddress() )*
+}
+
+void ImportAddress() : {}
+{
+  (<IMPORT_ADDRESS_SEGMENT>)+
+}
+
+void AssignmentStatement() : {}
+{
+  <IDENTIFIER> ( ParamList() )? <ASSIGN> Expression()
+}
+
+void ParamList() : {}
+{
+  <LPAREN> Param() ( <COMMA> Param() )* <RPAREN> 
+}
+
+void Param() : {}
+{
+  BaseExpression() ( <COLON> Expression() )?
+}
+
+void Expression() #void : {}
+{
+  OrExpression()
+}
+
+void OrExpression() : {}
+{
+  AndExpression() ( <OR> AndExpression() )*
+}
+
+void AndExpression() : {}
+{
+  CompareExpression() ( <AND> CompareExpression() )*
+}
+
+void CompareExpression() : {}
+{
+  ArithmeticExpression() 
+  ( 
+    ( ( <LT> | <LE> | <GT> | <GE> | <NE> | <EQ> ) ArithmeticExpression() )+
+    |
+    ( 
+      <ASSIGN> ArithmeticExpression() ( <TO> ArithmeticExpression() )?
+      |
+      <IN> PowerExpression()
+      |
+      <TO> ArithmeticExpression()
+    ) 
+  )?
+}
+
+void ArithmeticExpression() : {}
+{
+  AddExpression() ( <COLON> AddExpression() )? 
+}
+
+void AddExpression() : {}
+{
+  MultiplyExpression() ( ( <ADD> | <SUB> ) MultiplyExpression() )* 
+}
+
+void MultiplyExpression() : {}
+{
+  UnaryExpression() ( ( <MUL> | <DIV> ) PowerExpression() )*
+}
+
+void UnaryExpression() : {}
+{
+  ( <SUB> | <NOT> )? PowerExpression()
+}
+
+void PowerExpression() : {}
+{
+  ExtractExpression() ( <PWR> UnaryExpression() )?   
+}
+
+void ExtractExpression() : {}
+{
+   BaseExpression() 
+     ( <LBRACKET> ArgListExpression() <RBRACKET> | <DOT> <IDENTIFIER> ( <LPAREN> ArgListExpression() <RPAREN> )? )*  
+}
+
+void BaseExpression() #void : {}
+{
+   LiteralExpression() | IdentifierExpression() | ListExpression() | ConditionalExpression() 
+}
+
+void LiteralExpression() : {}
+{
+  <INT> | <REAL> | <TRUE> | <FALSE>
+}
+
+void IdentifierExpression() : {}
+{
+   <IDENTIFIER> ( <LPAREN> ArgListExpression() <RPAREN> ( <LBRACE> Expression() <RBRACE> )? )?  
+}
+
+void ListExpression() : {}
+{
+   <LPAREN> ArgListExpression() <RPAREN>   
+}
+
+void ConditionalExpression() : {}
+{
+  <IF> <LPAREN> Expression() <RPAREN> <LBRACE> Expression() <RBRACE> <ELSE> 
+  ( <IF> <LPAREN> Expression() <RPAREN> <LBRACE> Expression() <RBRACE> <ELSE> )*
+  <LBRACE> Expression() <RBRACE>  
+}
+
+void ArgListExpression() : {}
+{
+    ( ArgExpression() ( <COMMA> ArgExpression() )* )?
+}  
+
+void ArgExpression() : {}
+{
+    Expression() ( <BAR> FilterExpression() )?
+}
+
+void FilterExpression() : {}
+{
+    Expression()
+}

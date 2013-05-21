@@ -1,0 +1,27 @@
+// Parameters
+D = 25;     // Market demand
+C = 10;     // Marginal cost
+
+// Action sets
+function ASet = 0 to D;
+function ASet(b) = 0 to D-b;
+function BSet(a) = 0 to D-a;
+
+// Payoff functions
+function price(a, b) = D - a - b;
+function APayoff(a, b) = (price(a, b) - C)*a;
+function BPayoff(a, b) = (price(a, b) - C)*b;
+
+// Response functions
+AResponse(b) = 
+  collect(a in ASet | APayoff(a, b)==ABestResponseValue(b)) {a};
+ABestResponseValue(b) = max(a in ASet(b)) {APayoff(a, b)};
+
+BResponse(a) = 
+  collect(b in BSet(a) | BPayoff(a, b)==BBestResponseValue(a)) {b};
+BBestResponseValue(a) = max(b in BSet(a)) {BPayoff(a, b)};
+
+// Nash equilibria
+table NashEquilibria = 
+  collect(a in ASet, b in BSet(a) | a in AResponse(b) && b in BResponse(a)) 
+    {(a, b)};

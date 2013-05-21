@@ -1,0 +1,6 @@
+function isDivisible(n, k) = n/k==round(n/k);
+
+function isPerfect(n) = 
+  sum(k=1 to floor(n/2) | isDivisible(n,k)) {k} == n;
+
+table PerfectNumbers = collect(n=1 to 1000 | isPerfect(n)) {n};

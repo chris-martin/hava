@@ -1,0 +1,18 @@
+<classpath>
+  <classpathentry kind="src" path="src/test/java" output="target/test-classes" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/swinghelper/debug/1.0/debug-1.0.jar"/>
+  <classpathentry kind="src" path="/edu.gatech.hava.core"/>
+  <classpathentry kind="src" path="/edu.gatech.hava.debug"/>
+  <classpathentry kind="src" path="/edu.gatech.hava.gui"/>
+  <classpathentry kind="var" path="M2_REPO/fest/fest-assert/1.0/fest-assert-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/fest/fest-reflect/1.1/fest-reflect-1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/fest/fest-swing/1.1/fest-swing-1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/fest/fest-util/1.0/fest-util-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/4.6/junit-4.6.jar"/>
+  <classpathentry kind="var" path="M2_REPO/mrj/MRJToolkitStubs/1.0/MRJToolkitStubs-1.0.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+</classpath>

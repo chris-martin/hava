@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+   </extension>
+
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="edu.gatech.hava.hdt"
+            name="Hava">
+      </category>
+      <wizard
+            category="edu.gatech.hava.hdt"
+            class="edu.gatech.hava.hdt.ui.wizards.NewHavaProjectWizard"
+            finalPerspective="edu.gatech.hava.hdt.perspective"
+            hasPages="true"
+            icon="icons/hava.png"
+            id="edu.gatech.hava.hdt.newProjectWizard"
+            name="Hava Project"
+            preferredPerspectives="edu.gatech.hava.hdt.perspective"
+            project="true">
+      </wizard>
+      <wizard
+            category="edu.gatech.hava.hdt"
+            class="edu.gatech.hava.hdt.ui.wizards.NewHavaFileWizard"
+            finalPerspective="edu.gatech.hava.hdt.perspective"
+            hasPages="true"
+            icon="icons/hava.png"
+            id="edu.gatech.hava.hdt.newHavaFileWizard"
+            name="Hava File"
+            preferredPerspectives="edu.gatech.hava.hdt.perspective">
+      </wizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonWizard
+            type="new"
+            wizardId="edu.gatech.hava.hdt.newProjectWizard">
+         <enablement>
+         </enablement>
+      </commonWizard>
+      <commonWizard
+            type="new"
+            wizardId="edu.gatech.hava.hdt.newHavaFileWizard">
+         <enablement>
+         </enablement>
+      </commonWizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Commands related to the Hava programming environment."
+            id="edu.gatech.hava.hdt.havaMainCategory"
+            name="Hava">
+      </category>
+      <category
+            description="Commands related to viewing URL-based resources."
+            id="edu.gatech.hava.hdt.urlEditorCategory"
+            name="URLs">
+      </category>
+      <command
+            categoryId="edu.gatech.hava.hdt.urlEditorCategory"
+            description="Open a resource identified by a URL in an editor."
+            id="edu.gatech.hava.hdt.openURLCommand"
+            name="Open URL">
+         <commandParameter
+               id="edu.gatech.hava.hdt.urlCommandParameter"
+               name="URL"
+               optional="false">
+         </commandParameter>
+      </command>
+      <command
+            categoryId="edu.gatech.hava.hdt.urlEditorCategory"
+            description="Open a resource identified by a URL, provided by a dialog, in an editor."
+            id="edu.gatech.hava.hdt.openURLFromDialogCommand"
+            name="Open URL from Dialog">
+      </command>
+      <command
+            categoryId="edu.gatech.hava.hdt.havaMainCategory"
+            id="edu.gatech.hava.hdt.openNewHavaProjectCommand"
+            name="Create a New Hava Project">
+      </command>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:file?after=new.ext">
+         <command
+               commandId="edu.gatech.hava.hdt.openURLFromDialogCommand"
+               label="Open URL..."
+               mnemonic="U"
+               style="push"
+               tooltip="Open a resource from a URL.">
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="edu.gatech.hava.hdt.openURLCommand">
+         <class
+               class="edu.gatech.hava.hdt.ui.OpenURLHandler">
+         </class>
+      </handler>
+      <handler
+            commandId="edu.gatech.hava.hdt.openURLFromDialogCommand">
+         <class
+               class="edu.gatech.hava.hdt.ui.OpenURLFromDialogHandler"></class>
+      </handler>
+   </extension>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="Hava IDE">
+         <property
+               name="appName"
+               value="Hava IDE">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
+

@@ -1,0 +1,17 @@
+P = 600;     // per unit wholesale price
+m = 0.25;    // per unit retail markup factor
+s = 0.10;    // per unit salvage markdown factor
+
+dMIN = 20;     // lower limit on demand
+dMAX = 40;     // upper limit on demand
+
+// Economic variables
+Profit(Q, d) = Revenue(Q, d) - Cost(Q);
+Revenue(Q, d) = seasonSales(Q, d) + salvageSales(Q, d);
+seasonSales(Q, d) = (1+m)*P*min(Q, d);  // limited by inventory Q
+salvageSales(Q, d) = s*P*max(Q-d, 0);   // not sold during season
+Cost(Q) = P*Q;
+
+// Expected profit
+expectedProfit(Q) = sum(d = dMIN to dMAX) {Profit(Q, d)*prob(d)};
+private prob(d) = 1/(dMAX - dMIN +1);  // Assume uniform distribution

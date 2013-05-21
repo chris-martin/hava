@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Actions for Running Hava
+Bundle-SymbolicName: edu.gatech.hava.hdt.runaction;singleton:=true
+Bundle-Version: 1.0.0.X
+Bundle-Vendor: gatech.edu
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.core.resources,
+ edu.gatech.hava.core;bundle-version="1.0.0.X",
+ org.eclipse.ui.ide,
+ org.eclipse.debug.core,
+ edu.gatech.hava.hdt.view;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.part
+Bundle-ClassPath: .

@@ -1,0 +1,11 @@
+token JACK, QUEEN, KING, ACE;
+FACES = (2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE);
+
+token CLUB, DIAMOND, HEART, SPADE;
+SUITS = (CLUB, DIAMOND, HEART, SPADE);
+
+struct Card(face, suit);
+
+function randomCard = Card(random(FACES), random(SUITS));
+
+averageValue = sum(i=1 to 100) {randomCard.face} / 100;

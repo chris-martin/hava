@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Created-By: 1.5.0_08 (Sun Microsystems Inc.)
+Bundle-SymbolicName: edu.gatech.hava.core
+Bundle-Version: 1.0.0.X
+Bundle-Name: Hava Core
+Bundle-Vendor: gatech.edu
+Export-Package: edu.gatech.hava.engine,
+ edu.gatech.hava.engine.debug,
+ edu.gatech.hava.engine.progress,
+ edu.gatech.hava.parser,
+ edu.gatech.hava.parser.io,
+ edu.gatech.hava.report,
+ edu.gatech.hava.report.sort

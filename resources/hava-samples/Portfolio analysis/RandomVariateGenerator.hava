@@ -1,0 +1,50 @@
+/* Generates one- or multi-dimensional normal variates */
+
+import Matrix;
+
+// Single normal variate generation
+
+private _rvg_CLTsampleSize = 100;  // CLT sample size
+
+function rvg_Normal = 
+  (1/sqrt(_rvg_CLTsampleSize/12))
+    *sum(i = 1 to _rvg_CLTsampleSize) {random - 0.5};
+
+function rvg_Normal(mu, var) = mu + sqrt(var)*rvg_Normal;
+
+
+/* Multivariate normal variate generation via Cholesky factorization */
+
+function rvg_MultivariateNormal(mu, Sigma) = 
+  mx_Sum(mu, _rvg_variation(_rvg_Cholesky(Sigma)));
+
+private _rvg_Cholesky(Sigma) = mx_Cholesky(Sigma);
+function _rvg_variation(rvgCh) = 
+  mx_Multiply(rvgCh, collect(i = 1 to rvgCh.listSize) 
+    {rvg_Normal});  
+
+
+/* Test accuracy of std normal generation 
+
+private _rvg_tail = collect(0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0);
+private _rvg_stats(N) = 
+  sum(i = 1 to N, x = rvg_Normal) {
+    join(x, x^2, collect(k = 1 to _rvg_tail.listSize) {
+      x > _rvg_tail[k]})
+    };
+
+private _rvg_sampleSize = 10000;
+private _rvg_doTest = false;
+private table _rvg_Stats = 
+  if (_rvg_doTest) {
+    collect(i = 1 to _rvg_stats(_rvg_sampleSize).listSize)
+      {_rvg_stats(_rvg_sampleSize)[i]/_rvg_sampleSize}
+    }
+  else {IGNORE};
+
+*/
+
+
+
+
+

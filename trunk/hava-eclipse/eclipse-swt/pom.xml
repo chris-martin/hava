@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.gatech.hava</groupId>
+  <artifactId>eclipse-swt</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0.X</version>
+  
+  <name>
+    Eclipse SWT Dependencies
+  </name>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.eclipse.swt.gtk.linux</groupId>
+      <artifactId>x86</artifactId>
+      <version>3.3.0-v3346</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.swt.gtk.linux</groupId>
+      <artifactId>x86_64</artifactId>
+      <version>3.3.0-v3346</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.swt.win32.win32</groupId>
+      <artifactId>x86</artifactId>
+      <version>3.3.0-v3346</version>
+    </dependency>
+
+  </dependencies>
+
+</project>
+

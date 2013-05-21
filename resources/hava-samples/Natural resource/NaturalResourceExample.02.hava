@@ -1,0 +1,12 @@
+P = 400;     // per ounce price of gold
+I0 = 50;     // initial inventory of gold (in 000's)
+T = 5;       // lease duration (in years)
+d = 1/1.1;   // per-year discount factor
+
+// Economic Variables
+leaseValue = sum(t = 0 to T-1) {d^t*profit(t)};
+profit(t) = 400*Q(t) - 500*Q(t)^2/I(t);
+I(t) = if (t == 0) {I0} else {I(t-1) - Q(t-1)};
+
+// Optimal myopic production plan
+Q(t) = 0.40*I(t);

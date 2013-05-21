@@ -1,0 +1,26 @@
+// Items
+struct Item(val, res);
+table Items = 
+  collect(Item(30, 10.7), Item(18, 6.9), Item(16, 6), Item(7, 3));
+N = Items.listSize;
+R = 37;
+
+// Allocation evaluation
+function r(a) = sum(i = 1 to a.listSize) {a[i]*Items[i].res};
+function v(a) = sum(i = 1 to a.listSize) {a[i]*Items[i].val};
+
+/* Bellman Equation */
+optValue(i, r) = if (i > N) {0} else {max(k in K(i, r)) {V(i, r, k)}};
+function V(i, r, k) = 
+  k*Items[i].val + optValue(i+1, r - k*Items[i].res);
+function K(i, r) = 0 to floor(r/Items[i].res);
+
+/* Report Solution */
+private optK(i) = argmax(k in K(i, optR(i))) {V(i, optR(i), k)};
+private optR(i) = 
+  if (i==1) {R} 
+  else {optR(i-1) - optK(i-1)*Items[i-1].res};
+
+optAlloc = collect(i=1 to N) {optK(i)};
+optValue = v(optAlloc);
+optResource = r(optAlloc);

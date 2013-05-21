@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>edu.gatech.hava</groupId>
+    <artifactId>hava-eclipse</artifactId>
+    <version>1.0.0.X</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.gatech.hava</groupId>
+  <artifactId>edu.gatech.hava.hdt.feature</artifactId>
+  <version>1.0.0.X</version>
+
+  <name>
+    Hava Eclipse Feature
+  </name>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <pde>true</pde>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>pde-maven-plugin</artifactId>
+        <configuration>
+          <buildProperties>
+          </buildProperties>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt.common</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt.builder</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt.editor</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt.launch</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt.perspective</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.hdt.view</artifactId>
+    </dependency>
+
+  </dependencies>
+
+</project>
+

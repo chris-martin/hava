@@ -1,0 +1,56 @@
+/**
+
+PORTFOLIO ANALYSIS SCENARIOS
+
+*/
+
+/*
+  The program automatically generates scenario data.  
+  -  A scenario is a vector of total returns for each asset.
+  -  Each generated scenario represents a random draw from a multivariate  
+     log-normal distribution.    
+  You must specify the number of scenarios desired.  
+  You can also choose to fix a sample.  
+  - You do this by activating the token REPLICATING.
+  - GeneratedDataSetIndex identifies the fixed dataset.  
+  If token REPLICATING is commented out:
+  - a random dataset will be generated EACH time program is run.
+  - statistics corresponding to a fixed portfolio will change for each run.  
+  To supply your own generated scenario data:
+  - override the variable pasc_ScenarioData.  
+  Override the default values provided below.  
+*/
+
+// token REPLICATING;
+numGeneratedScenarios = 100;
+GeneratedDataSetIndex = 1;
+
+import PortfolioAnalysisSpecification;
+import Matrix;
+import RandomVariateGenerator;
+
+// Generated Scenario Returns
+
+private pasc_ScenarioData = 
+  last(i = 1 to GeneratedDataSetIndex, ss = pasc_GenerateReturnScenarios) 
+    {ss};
+
+numScenarios = pasc_ScenarioData.listSize;
+
+function pasc_GenerateReturnScenarios = 
+  collect(s = 1 to numGeneratedScenarios) {pasc_GenerateReturnScenario};
+
+function pasc_GenerateReturnScenario = 
+  collect(r = rvg_MultivariateNormal(meanLogReturn, pasc_CovMatrix), 
+          i = 1 to assets.listSize) 
+    {exp(r[i])};
+
+// Asset Statistics
+
+private meanLogReturn = collect(a in assets) {a.mu - a.stdev^2/2};
+
+private pasc_CovMatrix = 
+  collect(i = 1 to assets.listSize) {
+    collect(j = 1 to assets.listSize) {
+      corrMatrix[i][j]*assets[i].stdev*assets[j].stdev}
+    };

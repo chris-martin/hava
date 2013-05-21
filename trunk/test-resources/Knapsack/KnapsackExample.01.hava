@@ -1,0 +1,21 @@
+// Items
+struct Item(val, res);
+table Items = 
+  collect(Item(30, 10.7), Item(18, 6.9), Item(16, 6), Item(7, 3));
+N = Items.listSize;
+R = 37;
+
+// Allocation evaluation
+function r(a) = sum(i = 1 to a.listSize) {a[i]*Items[i].res};
+function v(a) = sum(i = 1 to a.listSize) {a[i]*Items[i].val};
+
+// All feasible assignments restricted to items 1 to i
+K(i) = 0 to floor(R/Items[i].res);
+A(i) = if (i == 1) {K(1)} else {Merge(A(i-1), K(i))};
+function Merge(A, K) = 
+  collect(a in A, k in K, m=join(a, k) | r(m) <= R) {m};
+
+// Optimal solution
+optAlloc = argmax(a in A(N)) {v(a)}; 
+optResource = r(optAlloc);
+optValue = v(optAlloc);

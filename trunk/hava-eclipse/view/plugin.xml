@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+
+      <category
+            id="edu.gatech.hava.hdt"
+            name="Hava">
+      </category>
+
+      <view
+            category="edu.gatech.hava.hdt"
+            class="edu.gatech.hava.hdt.views.solution.HavaSolutionView"
+            icon="icons/hava-solution.png"
+            id="edu.gatech.hava.hdt.views.havaSolution"
+            name="Report">
+      </view>
+
+      <view
+            category="edu.gatech.hava.hdt"
+            class="edu.gatech.hava.hdt.views.debug.DebugView"
+            icon="icons/hava-solution.png"
+            id="edu.gatech.hava.hdt.views.debug"
+            name="Solution"
+            restorable="false">
+      </view>
+
+   </extension>
+
+</plugin>

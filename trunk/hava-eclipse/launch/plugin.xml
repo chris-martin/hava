@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="edu.gatech.hava.hdt.launch.config.HavaLaunchConfigurationDelegate"
+            delegateName="Hava Program"
+            id="edu.gatech.hava.hdt.launchConfiguration"
+            modes="run,debug"
+            name="Hava Program">
+      </launchConfigurationType>
+   </extension>
+
+   <extension point ="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.trim.status">
+         <command
+               commandId="edu.gatech.hava.hdt.launch.command2"
+               label="OtherCommand"
+               style="push">
+         </command>
+         <toolbar
+                id="edu.gatech.hava.hdt.controlContribution">
+            <control
+                  class="edu.gatech.hava.hdt.ui.TimeElapsedWorkbenchWindowContribution"
+                  id="edu.gatech.hava.hdt.ui.timeElapsedControl">
+            </control>
+         </toolbar>
+         <menu
+               label="label">
+         </menu>
+         <command
+               commandId="edu.gatech.hava.hdt.launch.command1"
+               label="TestCommand"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="edu.gatech.hava.hdt.launch.config.HavaLaunchConfigurationTabGroup"
+            id="edu.gatech.hava.hdt.launch.launchConfigurationTabGroup"
+            type="edu.gatech.hava.hdt.launchConfiguration">
+      </launchConfigurationTabGroup>
+   </extension>
+
+   <extension point="org.eclipse.debug.ui.launchConfigurationTabs">
+      <tab
+            class="edu.gatech.hava.hdt.launch.config.HavaMainTab"
+            group="edu.gatech.hava.hdt.launch.launchConfigurationTabGroup"
+            id="edu.gatech.hava.hdt.launch.config.havaMainTab"
+            name="Hava Main Tab">
+      </tab>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="edu.gatech.hava.hdt.launch.config.HavaLaunchConfigurationTabGroup"
+            id="edu.gatech.hava.hdt.launch.launchConfigurationTabGroup"
+            type="edu.gatech.hava.hdt.launchConfiguration">
+      </launchConfigurationTabGroup>
+   </extension>
+
+   <extension point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            id="edu.gatech.hava.hdt.launchShortcut"
+            class="edu.gatech.hava.hdt.launch.HavaLaunchShortcut"
+            label="Hava Script"
+            icon="icons/hava.png"
+            modes="run,debug">
+         <contextualLaunch>
+            <enablement>
+               <with variable="selection">
+                  <count value="1"/>
+                  <iterate>
+                     <and>
+                        <or>
+                           <instanceof value="org.eclipse.core.resources.IFile"/>
+                           <instanceof value="org.eclipse.ui.IFileEditorInput"/>
+                        </or>
+                        <test
+                              value="*.hava"
+                              property="org.eclipse.debug.ui.matchesPattern"/>
+                     </and>
+                  </iterate>
+               </with>
+            </enablement>
+         </contextualLaunch>
+         <configurationType
+               id="edu.gatech.hava.hdt.launchConfiguration">
+         </configurationType>
+      </shortcut>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.core.launchDelegates">
+      <launchDelegate
+            delegate="edu.gatech.hava.hdt.launch.config.HavaLaunchConfigurationDelegate"
+            id="edu.gatech.hava.hdt.havaLaunchDelegate"
+            name="Hava Program"
+            type="edu.gatech.hava.hdt.launchConfiguration">
+      </launchDelegate>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="edu.gatech.hava.hdt.launch.preferences.HavaLaunchPreferencePage"
+            id="edu.gatech.hava.hdt.launch.preferences.HavaLaunchPreferencePage"
+            name="Hava Running">
+      </page>
+   </extension>
+
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="edu.gatech.hava.hdt.launch.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

@@ -1,0 +1,28 @@
+// Financial parameters
+S0 = 10;             // initial price
+E = 9.5;             // exercise price
+
+// Given lattice parameters
+sigma = 0.5;         // annual volatility
+dt = 1/52;           // period length in years
+K = 26;              // number of periods in lattice
+r = 0.02;            // annual interest rate
+beta = exp(-r*K*dt); // discount for option duration
+
+// Derived lattice parameters
+U = exp(sigma*sqrt(dt));         // UP multiplier
+q = (exp(r*dt) - 1/U)/(U - 1/U); // risk-neutral prob
+
+// Random path generation
+struct Event(prob, multiplier);
+table EventList = (Event(q, U), Event(1-q, 1/U));
+function rm = random(EventList).multiplier;
+function rlm = collect(k=1 to K) {rm};
+
+function rpp = buildPP(rlm, 1, collect(S0));
+function buildPP(lm, k, pp) =
+  if (k > K) {pp}
+  else {buildPP(lm, k+1, join(pp, lm[k]*pp[k]))};
+
+// Generate three sample paths
+table generatePaths = collect(i=1 to 3) {rpp};

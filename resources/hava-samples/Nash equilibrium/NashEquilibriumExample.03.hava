@@ -1,0 +1,30 @@
+// Parameters
+C = 10;
+D = 25;
+eMax = 25;
+
+// Action sets
+struct Action(e, q);
+function FSet(r) = collect(e = 0 to eMax, q = 0 to qMax(r, e)) {Action(e, q)};
+function qMax(r, e) = max(floor(D-C(e)-r),0);
+ASet = FSet(0);
+function ASet(b) = FSet(b.q);
+function BSet(a) = FSet(a.q);
+
+// Payoff functions
+function C(e) = C - sqrt(e);
+function Price(a, b) = D - a.q - b.q ;
+function APayoff(a, b) = (Price(a, b) - C(a.e))*a.q - a.e;
+function BPayoff(a, b) = (Price(a, b) - C(b.e))*b.q - b.e;
+
+// Response functions
+AResponse(b) = collect(a in ASet(b) | APayoff(a, b)==ABestResponseValue(b)) {a};
+private ABestResponseValue(b) = max(a in ASet(b)) {APayoff(a, b)};
+
+BResponse(a) = collect(b in BSet(a) | BPayoff(a, b)==BBestResponseValue(a)) {b};
+private BBestResponseValue(a) = max(b in BSet(a)) {BPayoff(a, b)};
+
+// Nash equilibria
+table NashEquilibria = 
+  collect(a in ASet, b in BSet(a) | a in AResponse(b) && b in BResponse(a))     
+    {(a, APayoff(a, b), b, BPayoff(a, b), Price(a, b), a.q + b.q)};

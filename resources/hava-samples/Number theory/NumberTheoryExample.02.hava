@@ -1,0 +1,32 @@
+function isDivisible(n, k) = n/k==round(n/k);
+
+private isPrime(n) = 
+  first(k=2 to floor(n/2) | isDivisible(n,k)){k} == IGNORE;
+
+private factorCount(n, k) = 
+  if (isDivisible(n, k)) {1 + factorCount(n/k, k)}
+  else {0};
+
+function FirstFactorization(n) = 
+  collect(k = 2 to floor(n/2) | isPrime(k) && isDivisible(n, k)) 
+    {(k, factorCount(n, k))};
+
+function SecondFactorization(n) =
+  join(
+    k = 2 to floor(n/2) | isPrime(k) && isDivisible(n, k), 
+    j=1 to factorCount(n, k)
+  ) {k};
+
+token PRIME;
+function ThirdFactorization(n) =
+  if (isPrime(n))
+    {PRIME}
+  else
+    {SecondFactorization(n)};
+
+table FirstList = 
+  collect(n = 2 to 100 | !isPrime(n)) {(n, FirstFactorization(n))};
+table SecondList = 
+  collect(n = 2 to 100 | !isPrime(n)) {(n, SecondFactorization(n))};
+table ThirdList = 
+  collect(n = 2 to 100) {(n, ThirdFactorization(n))};

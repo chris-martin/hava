@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Hava Editor"
+            extensions="hava"
+            icon="icons/hava-file.png"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="edu.gatech.hava.hdt.editor.HavaEditor"
+            id="edu.gatech.hava.hdt.editors.havaEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.core.filebuffers.documentSetup">
+      <participant
+            class="edu.gatech.hava.hdt.editor.HavaDocumentSetupParticipant"
+            extensions="hava">
+      </participant>
+   </extension>
+
+</plugin>

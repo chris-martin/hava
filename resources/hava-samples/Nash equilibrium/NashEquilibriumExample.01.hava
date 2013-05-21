@@ -1,0 +1,24 @@
+// Action sets
+token OPTION1, OPTION2, OPTION3;
+private ASet = (OPTION1, OPTION2, OPTION3);
+private BSet = (OPTION1, OPTION2, OPTION3);
+
+// Payoff functions
+function APayoff(a, b) = 
+  collect((0, 25, 5), (40, 0, 5), (10, 15, 10))[a:ASet][b:BSet];
+function BPayoff(a, b) = 
+  collect((0, 40, 10), (25, 0, 15), (5, 5, 10))[a:ASet][b:BSet];
+
+// Response functions
+AResponse(b) = 
+  collect(a in ASet | APayoff(a, b)==ABestResponseValue(b)) {a};
+ABestResponseValue(b) = max(a in ASet) {APayoff(a, b)};
+
+BResponse(a) = 
+  collect(b in BSet | BPayoff(a, b)==BBestResponseValue(a)) {b};
+BBestResponseValue(a) = max(b in BSet) {BPayoff(a, b)};
+
+// Nash equilibria
+table NashEquilibria = 
+  collect(a in ASet, b in BSet | a in AResponse(b) && b in BResponse(a)) 
+    {(a, b)};

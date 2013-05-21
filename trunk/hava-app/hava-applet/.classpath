@@ -1,0 +1,8 @@
+<classpath>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="src" path="/edu.gatech.hava.core"/>
+  <classpathentry kind="src" path="/edu.gatech.hava.debug"/>
+  <classpathentry kind="src" path="/edu.gatech.hava.gui"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+</classpath>

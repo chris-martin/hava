@@ -1,0 +1,393 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>edu.gatech.hava</groupId>
+    <artifactId>hava-parent</artifactId>
+    <version>1.0.0.X</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+  <groupId>edu.gatech.hava</groupId>
+  <artifactId>hava-eclipse</artifactId>
+  <version>1.0.0.X</version>
+  
+  <name>
+    Hava Eclipse Plugins
+  </name>
+
+  <modules>
+    <module>builder</module>
+    <module>common</module>
+    <module>eclipse-swt</module>
+    <module>feature</module>
+    <module>hava-dev-toolkit</module>
+    <module>hava-editor</module>
+    <module>launch</module>
+    <module>perspective</module>
+    <module>product</module>
+    <module>view</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- Hava Common -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.common</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Feature -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.feature</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Dev Toolkit -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Project Builder -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.builder</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Perspective -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.perspective</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Launch Configuration -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.launch</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Editor -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.editor</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Hava Views -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>edu.gatech.hava.hdt.view</artifactId>
+        <version>1.0.0.X</version>
+      </dependency>
+
+      <!-- Eclipse SWT -->
+      <dependency>
+        <groupId>edu.gatech.hava</groupId>
+        <artifactId>eclipse-swt</artifactId>
+        <version>1.0.0.X</version>
+        <type>pom</type>
+      </dependency>
+
+      <!-- org.eclipse.jface -->
+      <dependency>
+        <groupId>org.eclipse</groupId>
+        <artifactId>jface</artifactId>
+        <version>3.4.2.M20090107-0800</version>
+      </dependency>
+
+      <!-- org.eclipse.core.runtime -->
+      <dependency>
+        <groupId>org.eclipse.core</groupId>
+        <artifactId>runtime</artifactId>
+        <version>3.3.100-v20070530</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.equinox</groupId>
+            <artifactId>app</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.ui -->
+      <dependency>
+        <groupId>org.eclipse</groupId>
+        <artifactId>ui</artifactId>
+        <version>3.3.0-I20070614-0800</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>swt</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.ui</groupId>
+            <artifactId>workbench</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>expressions</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.jface.text -->
+      <dependency>
+        <groupId>org.eclipse.jface</groupId>
+        <artifactId>text</artifactId>
+        <version>3.3.0-v20070606-0010</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>text</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>swt</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.core.resources -->
+      <dependency>
+        <groupId>org.eclipse.core</groupId>
+        <artifactId>resources</artifactId>
+        <version>3.3.0-v20070604</version>
+      </dependency>
+
+      <!-- org.eclipse.ui.workbench.texteditor -->
+      <dependency>
+        <groupId>org.eclipse.ui.workbench</groupId>
+        <artifactId>texteditor</artifactId>
+        <version>3.3.0-v20070606-0010</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.jface</groupId>
+            <artifactId>text</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>filesystem</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>ui</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.core.commands -->
+      <dependency>
+        <groupId>org.eclipse.core</groupId>
+        <artifactId>commands</artifactId>
+        <version>3.3.0-I20070605-0010</version>
+      </dependency>
+
+      <!-- org.eclipse.equinox.common -->
+      <dependency>
+        <groupId>org.eclipse.equinox</groupId>
+        <artifactId>common</artifactId>
+        <version>3.3.0-v20070426</version>
+      </dependency>
+
+      <!-- org.eclipse.ui.workbench -->
+      <dependency>
+        <groupId>org.eclipse.ui</groupId>
+        <artifactId>workbench</artifactId>
+        <version>3.3.0-I20070608-1100</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>expressions</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>swt</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.jface</groupId>
+            <artifactId>databinding</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>databinding</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.swt -->
+      <dependency>
+        <groupId>org.eclipse</groupId>
+        <artifactId>swt</artifactId>
+        <version>3.3.0-v3346</version>
+      </dependency>
+
+      <!-- org.eclipse.ui.editors -->
+      <dependency>
+        <groupId>org.eclipse.ui</groupId>
+        <artifactId>editors</artifactId>
+        <version>3.3.0-v20070606-0010</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.ui</groupId>
+            <artifactId>ide</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.ui.workbench</groupId>
+            <artifactId>texteditor</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>ui</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.jface</groupId>
+            <artifactId>text</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>filebuffers</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>resources</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>filesystem</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.debug.ui -->
+      <dependency>
+        <groupId>org.eclipse.debug</groupId>
+        <artifactId>ui</artifactId>
+        <version>3.3.0-v20070607-1800</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>expressions</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>variables</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.ui</groupId>
+            <artifactId>console</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse</groupId>
+            <artifactId>help</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.debug</groupId>
+            <artifactId>core</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.ui</groupId>
+            <artifactId>ide</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.ui.ide -->
+      <dependency>
+        <groupId>org.eclipse.ui</groupId>
+        <artifactId>ide</artifactId>
+        <version>3.3.0-I20070620</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>net</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.ui</groupId>
+            <artifactId>forms</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>expressions</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.text -->
+      <dependency>
+        <groupId>org.eclipse</groupId>
+        <artifactId>text</artifactId>
+        <version>3.3.0-v20070606-0010</version>
+      </dependency>
+
+      <!-- org.eclipse.core.filebuffers -->
+      <dependency>
+        <groupId>org.eclipse.core</groupId>
+        <artifactId>filebuffers</artifactId>
+        <version>3.3.0-v20070606-0010</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>filesystem</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- org.eclipse.debug.core -->
+      <dependency>
+        <groupId>org.eclipse.debug</groupId>
+        <artifactId>core</artifactId>
+        <version>3.3.0-v20070607-1800</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>variables</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>filesystem</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- Javadoc -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+
+          <!-- Generate aggregate javadoc for all modules. -->
+          <aggregate>true</aggregate>
+
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>
+

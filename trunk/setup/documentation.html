@@ -1,0 +1,2942 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+<script>function a(c){this.t={};this.tick=function(d,e,b){var f=b?b:(new Date).getTime();this.t[d]=[f,e]};this.tick("start",null,c)}var g=new a;window.jstiming={Timer:a,load:g};try{window.jstiming.pt=window.gtbExternal&&window.gtbExternal.pageT()||window.external&&window.external.pageT}catch(h){};
+</script>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<!-- base -->
+<title>Big Hava Document</title>
+<style type="text/css">
+/* default css */
+table {
+font-size: 1em;
+line-height: inherit;
+border-collapse: collapse;
+}
+tr {
+text-align: left;
+}
+div, address, ol, ul, li, option, select {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+p {
+margin: 0px;
+}
+pre {
+font-family: Courier New;
+white-space: pre-wrap;
+margin:0;
+}
+body {
+margin: 6px;
+padding: 0px;
+font-family: Verdana, sans-serif;
+font-size: 10pt;
+background-color: #ffffff;
+}
+img {
+-moz-force-broken-image-icon: 1;
+}
+@media screen {
+html.pageview {
+background-color: #f3f3f3 !important;
+}
+body {
+min-height: 1100px;
+counter-reset: __goog_page__;
+}
+* html body {
+height: 1100px;
+}
+.pageview body {
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-right: 2px solid #bbb;
+border-bottom: 2px solid #bbb;
+width: 648px !important;
+margin: 15px auto 25px;
+padding: 40px 50px;
+}
+/* IE6 */
+* html {
+overflow-y: scroll;
+}
+* html.pageview body {
+overflow-x: auto;
+}
+/* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+html*#wys_frame::before {
+content: '\A0';
+position: fixed;
+overflow: hidden;
+width: 0;
+height: 0;
+top: 0;
+left: 0;
+}
+.writely-callout-data {
+display: none;
+*display: inline-block;
+*width: 0;
+*height: 0;
+*overflow: hidden;
+}
+.writely-footnote-marker {
+background-image: url('images/footnote_doc_icon.gif');
+background-color: transparent;
+background-repeat: no-repeat;
+width: 7px;
+overflow: hidden;
+height: 16px;
+vertical-align: top;
+-moz-user-select: none;
+}
+.editor .writely-footnote-marker {
+cursor: move;
+}
+.writely-footnote-marker-highlight {
+background-position: -15px 0;
+-moz-user-select: text;
+}
+.writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+background: transparent;
+}
+.writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+background: transparent;
+}
+.writely-footnote-hide-selection {
+cursor: move;
+}
+.editor .writely-comment-yellow {
+background-color: #FF9;
+background-position: -240px 0;
+}
+.editor .writely-comment-yellow-hover {
+background-color: #FF0;
+background-position: -224px 0;
+}
+.editor .writely-comment-blue {
+background-color: #C0D3FF;
+background-position: -16px 0;
+}
+.editor .writely-comment-blue-hover {
+background-color: #6292FE;
+background-position: 0 0;
+}
+.editor .writely-comment-orange {
+background-color: #FFDEAD;
+background-position: -80px 0;
+}
+.editor .writely-comment-orange-hover {
+background-color: #F90;
+background-position: -64px 0;
+}
+.editor .writely-comment-green {
+background-color: #99FBB3;
+background-position: -48px 0;
+}
+.editor .writely-comment-green-hover {
+background-color: #00F442;
+background-position: -32px 0;
+}
+.editor .writely-comment-cyan {
+background-color: #CFF;
+background-position: -208px 0;
+}
+.editor .writely-comment-cyan-hover {
+background-color: #0FF;
+background-position: -192px 0;
+}
+.editor .writely-comment-purple {
+background-color: #EBCCFF;
+background-position: -144px 0;
+}
+.editor .writely-comment-purple-hover {
+background-color: #90F;
+background-position: -128px 0;
+}
+.editor .writely-comment-magenta {
+background-color: #FCF;
+background-position: -112px 0;
+}
+.editor .writely-comment-magenta-hover {
+background-color: #F0F;
+background-position: -96px 0;
+}
+.editor .writely-comment-red {
+background-color: #FFCACA;
+background-position: -176px 0;
+}
+.editor .writely-comment-red-hover {
+background-color: #FF7A7A;
+background-position: -160px 0;
+}
+.editor .writely-comment-marker {
+background-image: url('images/markericons_horiz.gif');
+background-color: transparent;
+padding-right: 11px;
+background-repeat: no-repeat;
+width: 16px;
+height: 16px;
+-moz-user-select: none;
+}
+.editor .writely-comment-hidden {
+padding: 0;
+background: none;
+}
+.editor .writely-comment-marker-hidden {
+background: none;
+padding: 0;
+width: 0;
+}
+.editor .writely-comment-none {
+opacity: .2;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+-moz-opacity: .2;
+}
+.editor .writely-comment-none-hover {
+opacity: .2;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+-moz-opacity: .2;
+}
+.br_fix span+br:not(:-moz-last-node) {
+position:relative;
+left: -1ex
+}
+#cb-p-tgt {
+font-size: 8pt;
+padding: .4em;
+font-style: oblique;
+background-color: #FFF1A8;
+border: 1px solid #000;
+}
+}
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+blockquote {padding: 10px; border: 1px #DDD dashed }
+.webkit-indent-blockquote { border: none; }
+a img {border: 0}
+.pb {
+border-width: 0;
+page-break-after: always;
+/* We don't want this to be resizeable, so enforce a width and height
+using !important */
+height: 1px !important;
+width: 100% !important;
+}
+.editor .pb {
+border-top: 1px dashed #C0C0C0;
+border-bottom: 1px dashed #C0C0C0;
+}
+div.google_header, div.google_footer {
+position: relative;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+/* Table of contents */
+.editor div.writely-toc {
+background-color: #f3f3f3;
+border: 1px solid #ccc;
+}
+.writely-toc > ol {
+padding-left: 3em;
+font-weight: bold;
+}
+ol.writely-toc-subheading {
+padding-left: 1em;
+font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+list-style-position: inside;
+}
+.writely-toc-none {
+list-style-type: none;
+}
+.writely-toc-decimal {
+list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+list-style-type: lower-roman;
+}
+.writely-toc-disc {
+list-style-type: disc;
+}
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+list-style-type: disc;
+}
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+list-style-type: decimal;
+}
+/* end default css */
+/* custom css */
+body, p, div, td, li {
+text-align: justify;
+}
+/* end custom css */
+/* ui edited css */
+body {
+font-family: Verdana;
+font-size: 10.0pt;
+line-height: normal;
+background-color: #ffffff;
+}
+/* end ui edited css */
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+.editor div.google_header, .editor div.google_footer {
+border: 2px #DDDDDD dashed;
+position: static;
+width: 100%;
+min-height: 2em;
+}
+.editor .misspell {background-color: yellow}
+.editor .writely-comment {
+font-size: 9pt;
+line-height: 1.4;
+padding: 1px;
+border: 1px dashed #C0C0C0
+}
+/* end editor CSS */
+</style>
+<style>
+body {
+margin: 0px;
+}
+#doc-contents {
+margin: 6px;
+}
+#google-view-footer {
+clear: both;
+border-top: thin solid;
+padding-top: 0.3em;
+padding-bottom: 0.3em;
+}
+a.google-small-link:link, a.google-small-link:visited {
+color:#112ABB;
+font-family:Arial,Sans-serif;
+font-size:11px !important;
+}
+body, p, div, td {
+direction: inherit;
+}
+@media print {
+#google-view-footer {
+display: none;
+}
+}
+</style>
+<script>
+function viewOnLoad() {
+if (document.location.href.indexOf('spi=1') != -1) {
+if (navigator.userAgent.toLowerCase().indexOf('msie') != -1) {
+window.print();
+} else {
+window.setTimeout(window.print, 10);
+}
+}
+if (document.location.href.indexOf('hgd=1') != -1) {
+var footer = document.getElementById("google-view-footer");
+if (footer) {
+footer.style.display = 'none';
+}
+}
+}
+</script>
+</head><body onload="window.jstiming.load.tick('ol'); window.jstiming.report(window.jstiming.load, null, document.location.protocol == 'https:' ? 'https://gg.google.com/csi' : null);">
+<div id="doc-contents">
+<div>
+<a id="tsg5" name="Hava_IDE_Project_Vision"></a><a id="gpkd" name="Hava_IDE_Project_Vision"></a><a id="Table_of_Contents" name="Table_of_Contents"></a>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<br>
+</p>
+<p style="text-align: center;">
+<b><font size="7">Hava IDE</font></b><br>
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="text-align: center;">
+<font size="3"><b>Developers<br>
+<br>
+</b></font>Beau Bennett<br>
+Chris Martin<br>
+Matt Luongo<br>
+</div>
+<br>
+<br>
+<br>
+<hr class="pb"><br>
+<br>
+<h1 style="text-align: center;"><a id="Table_of_Contents_785426585384_0538806526518828" name="Table_of_Contents_785426585384_0538806526518828"></a>
+Table of Contents
+</h1>
+<div class="writely-toc" id="WritelyTableOfContents" toctype="none+none"><ol class="writely-toc-none"><li><a target="_self" href="#Table_of_Contents_785426585384_0538806526518828">Table of Contents</a></li><li><a target="_self" href="#Project_Vision_869304825856343">Project Vision</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Overview_7046738437733862_3600">Overview</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Problem_Statement_366544958356_39034900032268927">Problem Statement</a></li><li><a target="_self" href="#Product_Position_Statement_678_3560636524293155">Product Position Statement</a></li></ol></li><li><a target="_self" href="#Users_24591176909560974_614873">User Demographics</a></li><li><a target="_self" href="#Features_37996443039818195_039">Features</a></li><li><a target="_self" href="#Constraints_000474108016196406_6704483856858624">Constraints</a></li><li><a target="_self" href="#Eclipse_Implementation_6550780_15260075742957435">Eclipse Implementation</a></li><li><a target="_self" href="#Applet_Standalone_Implementati_3218131831691745">Applet / Standalone Implementation</a></li><li><a target="_self" href="#Project_Timeframe_753547841217_7582770088593375">Project Timeframe</a></li></ol></li><li><a target="_self" href="#Use_Cases_24774557413291287_23">Use Cases</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_Stakeholders_and_Interests_63_9306479619309892">Stakeholders and Interests</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_Hackman_and_Platzman_26797704_3437684608593182">Hackman and Platzman</a></li><li><a target="_self" href="#_Normal_Users_875904778530453__007969376581718257">Normal Users</a></li><li><a target="_self" href="#_Power_Users_1590954100346511__9053814249287393">Power Users</a></li><li><a target="_self" href="#_Future_Maintainers_6922660979_5034986030483531">Future Maintainers</a></li></ol></li><li><a target="_self" href="#_Actors_060089527748134475_859_09113535830971664">Actors</a></li><li><a target="_self" href="#_1_Working_with_Hava_Code_8554_03060022876287416">1: Working with Hava Code</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#1_1_User_creates_a_Hava_projec">1.1: User creates a Hava project</a></li><li><a target="_self" href="#1_2_User_opens_the_Hava_editor">1.2: User opens the Hava editor</a></li><li><a target="_self" href="#1_3_User_edits_a_Hava_file_240_9352919842360192">1.3: User edits a Hava file</a></li><li><a target="_self" href="#_1_3_User_deletes_a_Hava_file_">1.4: User deletes a Hava file</a></li><li><a target="_self" href="#1_5_User_opens_a_Hava_file_fro">1.5: User opens a Hava file from a URL</a></li></ol></li><li><a target="_self" href="#_2_Navigating_Hava_Files_57713_883038854079457">2: Navigating Hava Files</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_2_1_Finding_a_declaration_607_30575978185483554">2.1: Finding a declaration</a></li><li><a target="_self" href="#_2_3_Switching_Active_Document_9034098435075528">2.2: Switching Active Document</a></li></ol></li><li><a target="_self" href="#_3_Running_Hava_Code_950694360_32235704625015915">3: Running Hava Code</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_3_1_User_runs_a_Hava_file_618_7089486116066561">3.1: User runs a Hava file</a></li></ol></li><li><a target="_self" href="#4_Debugging_Hava_Code_37708382_4894839960578006">4: Debugging Hava Code</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_4_1_Filtering_Report_72422178_6995283881957336">4.1 User runs a Hava file in debug mode</a></li><li><a target="_self" href="#4_2_User_makes_a_syntax_error_">4.2: User makes a syntax error</a></li><li><a target="_self" href="#4_3_Filtering_Report_433843329">4.3: Filtering Report</a></li><li><a target="_self" href="#_4_2_Sorting_Report_2828277872_5930632681179664">4.3: Sorting Report</a></li></ol></li><li><a target="_self" href="#_5_Installing_Hava_IDE_1443979_041403120844807906">5: Installing Hava IDE</a></li><li><a target="_self" href="#_6_Building_Hava_IDE_from_Sour_45906539403093893">6: Building Hava IDE from Source</a></li></ol></li><li><a target="_self" href="#Detailed_Design_79161087792064">Detailed Design</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Package_Structure_432533472792">Package Structure</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Eclipse_Features_0924953192177_5624150800779912">Eclipse Features</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Builder_05350174095233773_5651">Builder</a></li><li><a target="_self" href="#Launch_15551593297241573_63194">Launch</a></li><li><a target="_self" href="#Editor_7986784835224918_025992">Editor</a></li><li><a target="_self" href="#Perspective_7834159682303259_0">Perspective</a></li><li><a target="_self" href="#View_8344051327315197_04395438">View</a></li><li><a target="_self" href="#Common_5036318294527322_350161">Common</a></li></ol></li></ol></li><li><a target="_self" href="#_Dynamic_Design_47289185395296">Dynamic Design</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Interactions_Between_Eclipse_P_5621188524943269">Interactions Between Eclipse Plugins</a></li><li><a target="_self" href="#Continuous_Parsing_32258507962_14437666914199854">Continuous Parsing</a></li><li><a target="_self" href="#Debug_Listeners_74606974837959_6232777627785819">Debug Listeners</a></li><li><a target="_self" href="#Launching_6381944903368637_505">Launching</a></li><li><a target="_self" href="#Aborting_a_Launch_802416115044_33143288850817565">Aborting a Launch</a></li><li><a target="_self" href="#Swing_Applications_54830997910_04258894574167604">Swing Applications</a></li></ol></li><li><a target="_self" href="#Data_Design_6496519823818424_9">Data Design</a></li></ol></li><li><a target="_self" href="#Design_Validation_662192521961_9559686632577862">Design Validation</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Traceability_Analysis_49739992_32409610195379235">Traceability Analysis</a></li><li><a target="_self" href="#SAAM_Analysis_4948931783349737">SAAM Analysis</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Future_Features_47406496534832_9486057611449801">Future Features</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Code_Completion_39575100776445">Code Completion</a></li><li><a target="_self" href="#Code_Generation_74252806867676">Code Generation</a></li><li><a target="_self" href="#Opening_Hava_Source_from_a_URL">Opening Hava Source from a URL</a></li></ol></li></ol></li><li><a target="_self" href="#Summary_7802630028262806_41337_8214790394002564">Summary</a></li></ol></li><li><a target="_self" href="#Design_Rationale_8050598945592">Design Rationale</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Solution_Comparison_9103846697_6534323801230515">Solution Comparison</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Standalone_Enhancement_6786764_8252265780388277">Standalone Enhancement</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Description_33203072754717655__5057371121878899">Description</a></li><li><a target="_self" href="#Advantages_6278928319786714_11_9922792870571269">Advantages</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Architecture_tailored_to_our_s_9412851293326613">Architecture tailored to our solution</a></li></ol></li><li><a target="_self" href="#Better_control_over_user_inter_048964750818441205">Better control over user interface</a></li><li><a target="_self" href="#Disadvantages_3731381142844419">Disadvantages</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Difficult_given_time_constrain_9005854702011216">Difficult given time constraints</a></li><li><a target="_self" href="#Opposition_to_code_base_120017_6440410388255415">Opposition to code base</a></li></ol></li></ol></li><li><a target="_self" href="#Eclipse_Integration_4989057805_3724437514923685">Eclipse Integration</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Description_45645408884085914_">Description</a></li><li><a target="_self" href="#Advantages_25301375891871747_5">Advantages</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Existing_code_base_76501222331_14155125743600794">Existing code base</a></li><li><a target="_self" href="#Modularity_9733169499862528_96">Modularity</a></li><li><a target="_self" href="#Maintainability_18459421118419_8182843950488453">Maintainability</a></li><li><a target="_self" href="#Extensibility_7448750943869277">Extensibility</a></li><li><a target="_self" href="#Popularity_9010756590642324_89">Popularity</a></li></ol></li><li><a target="_self" href="#Disadvantages_9597131057214588_9935519307373285">Disadvantages</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Weight_37551732553240347_56406">Weight</a></li><li><a target="_self" href="#Models_of_Use_0498883229194037_4981868035266006">Models of Use</a></li></ol></li></ol></li></ol></li><li><a target="_self" href="#Summary_8068720916828738_74771">Summary</a></li><li><a target="_self" href="#Solution_4385089922516423_5511">Solution</a></li></ol></li><li><a target="_self" href="#_Test_Plan_4326883053801214_44">Test Plan</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_Strategy_6397636309397461_275">Strategy</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_Roles_4752455428190524_709373">Roles</a></li><li><a target="_self" href="#_Black_box_Testing_65980782139">Black-box Testing</a></li><li><a target="_self" href="#_White_box_Testing_41754699426">White-box Testing</a></li><li><a target="_self" href="#_System_Testing_98346844532817">System Testing</a></li><li><a target="_self" href="#_Bug_Handling_1621934025909500">Bug Handling</a></li></ol></li><li><a target="_self" href="#_Adequacy_Criteria_85441678050">Adequacy Criteria</a></li><li><a target="_self" href="#_Test_Cases_4700369171921588_8">Test Cases</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#_1_User_creates_a_Hava_project_2902178568628606">1: User creates a Hava project</a></li><li><a target="_self" href="#2_Creating_a_new_Hava_file_6856661487611476">2: Creating a new Hava file</a></li><li><a target="_self" href="#_2_User_opens_the_Hava_editor__8019995138285557">3: User opens the Hava editor</a></li><li><a target="_self" href="#_3_User_edits_a_Hava_file_8927_7880225896086696">4: User edits a Hava file</a></li><li><a target="_self" href="#4_User_deletes_a_Hava_file_620_9784704835504853">5: User deletes a Hava file</a></li><li><a target="_self" href="#5_Finding_a_declaration_302623_6287783316363067">6: Finding a declaration</a></li><li><a target="_self" href="#6_User_runs_a_Hava_file_449264_6966160653008314">7: User runs a Hava file</a></li><li><a target="_self" href="#_9_Filtering_Report_2613368121_8646981754305048">8: Filtering Report</a></li><li><a target="_self" href="#_4_2_Sorting_Report_2828277872">9: Sorting Report</a></li><li><a target="_self" href="#10_Menu_Options_97537528657291_2757424714422867">10: Menu Options</a></li><li><a target="_self" href="#11_Other_UI_Elements_767107534_04742393153016533">11: Other UI Elements</a></li></ol></li><li><a target="_self" href="#Validation_Testing__17308088280103995">Validation Testing</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Basic_Usability_09522457548499_1327323384363751">Basic Usability</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#File_Management_28348399430664_9626738465944468">File Management</a></li><li><a target="_self" href="#Running_Hava_Files_23911868807_6212951990729283">Running Hava Files</a></li></ol></li><li><a target="_self" href="#Debugging_Features_24122583066_2895116585538169">Debugging Features</a><ol style="margin-left: 0pt;" class="writely-toc-subheading writely-toc-none"><li><a target="_self" href="#Poker_Example_Type_Mismatch_59_07450479015488498">Poker Example: Type Mismatch</a></li></ol></li></ol></li></ol></li></ol></div>
+<br>
+<hr class="pb"><br>
+<h1 style="text-align: center;"><a id="Project_Vision_869304825856343" name="Project_Vision_869304825856343"></a>
+Project Vision
+</h1>
+<br>
+<h2><a id="Overview_7046738437733862_3600" name="Overview_7046738437733862_3600"></a>
+Overview
+</h2>
+Hava is a language created to help solve problems in industrial and
+systems engineering.&nbsp; The language is meant to be used as a
+learning tool for aspiring engineers who might not be familiar with
+typical programming languages or paradigms.<br>
+<br>
+The purpose of this project is to create a development environment for
+Hava.&nbsp; One Hava editing tool currently exists, but needs to be
+expanded upon.&nbsp; The primary requested feature is the inclusion of
+debugging features.<br>
+<br>
+This feature is part of a larger vision to create a framework which
+will promote usage of the Hava language.&nbsp; Hava is a new way to
+solve a domain problem, and its creators would like to see it
+popularized.&nbsp; An important aspect of this goal is to make it
+attractive to non-programmers by keeping initial learning overhead
+small.<br>
+<h3><a id="Problem_Statement_366544958356_39034900032268927" name="Problem_Statement_366544958356_39034900032268927"></a>
+Problem Statement<br>
+</h3>
+<div>
+<table class="zeroBorder" id="gmzj" border="0" bordercolor="#000000" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td width="200">
+The problem<br>
+</td>
+<td>
+Complicated Hava code is difficult to debug<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+Who the problem affects<br>
+</td>
+<td>
+Anyone who uses the Hava language<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+The impact of the problem<br>
+</td>
+<td>
+Time is wasted, Hava programs used in classes or real applications may be defective<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+A successful solution<br>
+</td>
+<td>
+A system which clearly shows the runtime execution of Hava code, particularly at a point of failure.<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><a id="Product_Position_Statement_678_3560636524293155" name="Product_Position_Statement_678_3560636524293155"></a>
+Product Position Statement
+</h3>
+<div>
+<table class="zeroBorder" id="fi87" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td width="200">
+Who the users are<br>
+</td>
+<td>
+Experts in engineering fields, with little programming knowledge<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+What the users do<br>
+</td>
+<td>
+Use Hava to solve dynamic programming problems<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+What our system is<br>
+</td>
+<td>
+An Eclipse plugin with tools for authoring, navigating, and debugging Hava code<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+What our system does<br>
+</td>
+<td>
+Displays the details of Hava code execution, in an interface which is linked to the code editor<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+Existing solution<br>
+</td>
+<td>
+A basic text field for editing, with plain text output<br>
+</td>
+</tr>
+<tr>
+<td width="200">
+Advantage of our system<br>
+</td>
+<td>
+A clearer and more interactive interface makes it easier to understand how Hava code is being executed.<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><a id="Users_24591176909560974_614873" name="Users_24591176909560974_614873"></a>
+User Demographics
+</h2>
+The sponsors anticipate two distinct categories of Hava users within the industrial engineering community.<br>
+<br>
+<ul>
+<li>
+"Power users" consist of graduate students, instructors, and industry
+professionals.&nbsp; The major feature additions such as improved
+debugging are targeted mainly toward these users.&nbsp; Power users may
+or may not have previous programming or IDE experience outside of the
+existing Hava editor.&nbsp; The power users are used to the current
+IDE, so the new one should be designed to look and feel like the
+current IDE.
+</li>
+<li>The majority of users- around 80%- will be upper-level
+undergraduate students who do not need to write or debug their own Hava
+code.&nbsp; Instead, they will be running and making minor
+modifications to existing Hava programs written by a power user.&nbsp;
+These users are likely to have never used Hava or an IDE before.&nbsp;
+They have no previous experience which would allow a good basis for UI
+design, other than to make it simple and accessible.
+</li>
+</ul>
+<br>The main purpose of our product is to assist the power users, we
+also want to keep in mind that others may have reason to use it as well.<br>
+<h2><a id="Features_37996443039818195_039" name="Features_37996443039818195_039"></a>
+Features
+</h2>
+Hava source code editor<br>
+<ul>
+<li>
+Syntax coloring<br></li>
+<li>
+Parse checking - syntax errors will be indicated in files being edited.<br></li>
+<li>
+Tabbed view for editing multiple file
+</li>
+<li>
+Hava files can be opened from a URL<br>
+</li>
+</ul>
+<br>Launching Hava code<br><ul><li>Hava files can be run in launch or debug mode, opening the appropriate view</li><li>Time elapsed and memory usage will be displayed for every Hava file launched<br></li></ul><br>
+Hava solution view<br>
+<ul>
+<li>
+A view containing the Hava report: a formatted table of variable values and comment
+</li>
+<li>
+Variables and comments can be sorted alphabetically and filtered by a text search<br></li>
+<li>
+Includes a method to jump to relevant Hava code<br>
+</li>
+</ul>
+<br>
+Hava debug view<br>
+<ul>
+<li>
+A tree view to be used for debugging.&nbsp; Each variable is given a
+node which may be expanded to show how that variable was
+calculated.&nbsp; This view will replace the current "trace" feature.<br>
+</li>
+<li>
+Includes a method to jump to Hava code referred by a particular node
+</li>
+<li>
+Variables can be sorted alphabetically and filtered by name<br>
+</li>
+</ul>
+<br>
+Cross Platform Support<br>
+<ul>
+<li>
+Ability to be installed on different platforms.
+</li>
+<li>
+Pre-built installation for Windows (just extract a zip file and run an executable).<br>
+</li>
+</ul>
+<h2><a id="Constraints_000474108016196406_6704483856858624" name="Constraints_000474108016196406_6704483856858624"></a>
+Constraints
+</h2>
+<ul>
+<li>
+Accessibility - The IDE, and the debugging functionality especially,
+should give insight into how the language works so that users are
+better able to learn the language.
+</li>
+<li>
+Debuggability - When a user makes a mistake in their code, finding the error and correcting it should be an easy task.
+</li>
+<li>
+Usability - Running and debugging should be simple and intuitive.<br>
+</li>
+<li>Simplicity - Many end users have never developed before so an IDE
+is not second nature to them.&nbsp; The simpler and more
+straightforward it is to do things, the easier they will be able to get
+their work done.
+</li>
+<li>
+Flexibility of Environment - Experienced developers and neophyte should both be able to use the IDE.
+</li>
+<li>
+Maintainability - Future developers may need to fix bugs in the IDE.&nbsp; Doing so should be simple.
+</li>
+<li>
+Extensibility - Any new features that are needed should be able to be added to the IDE easily.
+</li>
+</ul>
+<h2><a id="Eclipse_Implementation_6550780_15260075742957435" name="Eclipse_Implementation_6550780_15260075742957435"></a>
+Eclipse Implementation
+</h2>
+Plug-ins can be bundled into an "Eclipse product"<br>
+<ul>
+<li>
+Download eclipse and Hava plug-in at the same time
+</li>
+<li>
+Stripped of unnecessary features
+</li>
+<li>
+Carries Hava "branding" (such as replaced splash image)
+</li>
+</ul>
+<br>
+There are two options for how we deploy the application<br>
+<ul>
+<li>
+Simple option: Install JRE, download and unzip the eclipse product.
+</li>
+<li>More sophisticated: We can create installers for Windows/Mac/Linux,
+which will install the JRE if necessary and set up file associations
+for .hava files.
+</li>
+</ul>
+<br>
+Addressing ease of use<br>
+<ul>
+<li>
+The Hava perspective automatically opens the commonly used views (navigator, Hava editor, Hava solution)
+</li>
+<li>The product ships with a workspace containing a "Default Hava
+Project", so users disinterested in creating projects can deal only
+with files in this project if they prefer.
+</li>
+<li>Default Hava Project comes with an immediately working example of
+Hava code, which demonstrates both the power of the language and the
+functionality of the eclipse perspective.
+</li>
+</ul>
+<br>
+Additional benefits of Eclipse<br>
+<ul>
+<li>
+Many basic features like tabbed editing and text search already exist.
+</li>
+<li>
+Eclipse is a mature platform, and our Hava features will be extensions to existing stable, polished components.
+</li>
+<li>
+Software update manager allows us to provide plug-in updates easily and uniformly.
+</li>
+</ul>
+<h2><a id="Applet_Standalone_Implementati_3218131831691745" name="Applet_Standalone_Implementati_3218131831691745"></a>
+Applet / Standalone Implementation
+</h2>Without the underlying architecture that Eclipse provides,
+developing matching features for the existing editor will be more
+difficult. The applet is a beneficial product because it can be used
+with no installation whatsoever.&nbsp; However, the addition of any
+features here is outside the scope of this project.<br>
+<br>
+We must make sure that our changes to the Hava engine do not break any
+functionality in these applications, and the applet must continue to be
+compliant with Java 1.5.<br>
+<h2><a id="Project_Timeframe_753547841217_7582770088593375" name="Project_Timeframe_753547841217_7582770088593375"></a>
+Project Timeframe
+</h2>
+The project schedule is dictated by requirements of the CS 4911 course.<br>
+<br>
+Development phases:<br>
+<ul>
+<li>
+Iteration 1: May 11 - June 7
+</li>
+<li>
+Iteration 2: June 8 - June 28
+</li>
+<li>
+Iteration 3: June 29 - July 27
+</li>
+</ul>
+<br>
+Important dates:<br>
+<ul>
+<li>
+June 29 - Mid-semester product demo.
+</li>
+<li>
+July 22 - End of semester product demo.
+</li>
+<li>
+July 27 - Final product delivery
+</li>
+</ul>
+<hr class="pb"><br>
+<h1 style="text-align: center;"><a id="Use_Cases_24774557413291287_23" name="Use_Cases_24774557413291287_23"></a>
+Use Cases<br>
+</h1>
+<br>
+<h2><a id="_Stakeholders_and_Interests_63_9306479619309892" name="_Stakeholders_and_Interests_63_9306479619309892"></a>
+<b>Stakeholders and Interests</b>
+</h2>
+<h3><a id="_Hackman_and_Platzman_26797704_3437684608593182" name="_Hackman_and_Platzman_26797704_3437684608593182"></a>
+Hackman and Platzman
+</h3>
+Hava project owners, evangelists, creators<br>
+<br>
+<b>Priorities</b><br>
+<ul>
+<li>
+Accessibility<br>
+</li>
+<li>
+Debuggability<br>
+</li>
+</ul>
+<h3><a id="_Normal_Users_875904778530453__007969376581718257" name="_Normal_Users_875904778530453__007969376581718257"></a>
+Normal Users<br>
+</h3>
+Mostly undergrads using Hava for ISyE course work<br>
+<b><br>
+Priority</b><br>
+<ul>
+<li>
+Simple usability<br>
+</li>
+</ul>
+<h3><a id="_Power_Users_1590954100346511__9053814249287393" name="_Power_Users_1590954100346511__9053814249287393"></a>
+Power Users
+</h3>
+Teaching professors, researchers, financial analysts and other professionals<br>
+<br>
+<b>Priorities:</b><br>
+<ul>
+<li>
+Debuggability
+</li>
+<li>
+Usability
+</li>
+<li>
+Flexibility of environment<br>
+</li>
+</ul>
+<h3><a id="_Future_Maintainers_6922660979_5034986030483531" name="_Future_Maintainers_6922660979_5034986030483531"></a>
+Future Maintainers
+</h3>
+Developers chosen to maintain the project in the future, including the creators and potentially other senior design groups<br>
+<br>
+<b>Priorities:</b><br>
+<ul>
+<li>
+Maintainability
+</li>
+<li>
+Ease of extension<br>
+</li>
+</ul>
+<h2><a id="_Actors_060089527748134475_859_09113535830971664" name="_Actors_060089527748134475_859_09113535830971664"></a>
+<b>Actors</b>
+</h2>
+<ul>
+<li>
+Normal User: Norma
+</li>
+<li>
+Power User: Powell
+</li>
+<li>
+Developer: Dan
+</li>
+</ul>
+<h2><a id="_1_Working_with_Hava_Code_8554_03060022876287416" name="_1_Working_with_Hava_Code_8554_03060022876287416"></a>
+1: Working with Hava Code<br>
+</h2>
+<b>Actor:</b> Norma or Powell<br>
+<b>Stakeholders:</b> All<br>
+<b>Interests:</b><br>
+<ul>
+<li>
+Usability - Normal and Power Users - Code should be easy to read and edit.
+</li>
+<li>
+Accessibility - Normal and Power Users - Editor features make it easier to learn the language.
+</li>
+</ul>
+<div>
+<h3><a id="1_1_User_creates_a_Hava_projec" name="1_1_User_creates_a_Hava_projec"></a>
+1.1: User creates a Hava project
+</h3>
+<b>Features:</b> NAV-1<br>
+<b>Precondition: </b>Application is installed and running.<br>
+<b> Scenario:</b><br>
+<ol>
+<li>
+User indicates that he wants to create a new project.
+</li>
+<li>
+User specifies the name of the project
+</li>
+<li>
+User specifies the filesystem location for hava source files.
+</li>
+</ol>
+<b>Postcondition:</b> Project is created, and is shown in a list of projects.<br>
+<h3><a id="1_2_User_opens_the_Hava_editor" name="1_2_User_opens_the_Hava_editor"></a>
+1.2: User opens the Hava editor
+</h3>
+<b>Precondition:</b> A Hava project exists (Case 1.1).<b><br>
+Scenario:</b> User specifies a Hava file to open, or specifies the name and path for a new Hava file.<br>
+<b>Postcondition:</b> The Hava editor is open, and contains the file contents.
+</div>
+<div>
+<b> Alternative flow:</b> The file is already open in another tab<br>
+<ol>
+<li>
+Focus is brought to that tab instead of opening the file twice.
+</li>
+</ol>
+<b>Alternative flow:</b> The file suffix is not "hava".<br>
+<ol>
+<li>
+A different type of editor opens (default text editor).<br>
+</li>
+</ol>
+<h3><a id="1_3_User_edits_a_Hava_file_240_9352919842360192" name="1_3_User_edits_a_Hava_file_240_9352919842360192"></a>
+1.3: User edits a Hava file
+</h3>
+<b> Features:</b> ED-1, ED-2<b><br>
+Precondition:</b> The files meant to be edited have already been opened (Case 1.2).<br>
+<b> Scenario:</b><br>
+<ol>
+<li>
+User adds, modifies, and deletes Hava code from the source file.
+</li>
+<li>
+Syntactic elements are colored differently on the screen.<br>
+</li>
+</ol>
+<b>Alternative Flow:</b> User adds text that is not valid Hava syntax.<br>
+<ol>
+<li>
+System visually indicates error location.
+</li>
+<li>
+If the user doesn't understand the problem, he can find a brief explanation.
+</li>
+<li>
+The user modifies the code to correct the syntax error.
+</li>
+</ol>
+<b> Postcondition:</b>&nbsp; File contents are displayed including user
+modifications with syntax coloring and visual indication of any
+unresolved errors.<br>
+</div>
+<div>
+<h3><a id="_1_3_User_deletes_a_Hava_file_" name="_1_3_User_deletes_a_Hava_file_"></a>
+1.4: User deletes a Hava file
+</h3>
+<b>Precondition:</b> A project exists, containing some Hava file.<br>
+<b>Scenario:</b> User indicated that a file should be deleted.<br>
+<b>Postcondition:</b> The file is removed from the filesystem.<br><h3><a id="1_5_User_opens_a_Hava_file_fro" name="1_5_User_opens_a_Hava_file_fro"></a>1.5: User opens a Hava file from a URL
+</h3>
+<b>
+Scenario:</b> User specifies a URL referencing a Hava file to open.<br>
+<b>Postcondition:</b> The Hava editor is open, and contains the remote file contents.
+<div>
+<b> Alternative flow:</b> The file is already open in another tab<br>
+<ol><li>
+Focus is brought to that tab instead of opening the file twice.
+</li></ol>
+<b>Alternative flow:</b> The file suffix is not "hava".<br>
+<ol><li>
+The suffix is assumed, and the editor is opened on the same resource with the additional suffix.</li></ol><b>Alternative flow:</b> The remote resource does not exist.<br>
+<ol><li>
+The user is informed that the resource could not be found.</li><li>No additional editor tabs are opened.<br></li></ol></div><br>
+<h2><a id="_2_Navigating_Hava_Files_57713_883038854079457" name="_2_Navigating_Hava_Files_57713_883038854079457"></a>
+2: Navigating Hava Files<br>
+</h2>
+<p>
+<b>Actor:</b> Powell<br>
+<b> Stakeholders: </b>Power Users<br>
+<b> Interests:</b><br>
+</p>
+<ul>
+<li>
+Debuggability - Finding where variables are defined and used helps debugging.
+</li>
+<li>
+Usability - Handling multiple files at once is easier than handling them one at a time or putting the code into one large file.
+</li>
+</ul>
+<h3><a id="_2_1_Finding_a_declaration_607_30575978185483554" name="_2_1_Finding_a_declaration_607_30575978185483554"></a>
+2.1: Finding a declaration
+</h3>
+<b>Features:</b> NAV-2<br>
+<b>Precondition:</b> Application installed (Case 5).<b><br>
+Scenario:<br>
+</b>
+<ol>
+<li>
+User indicates which variable he wants to find
+</li>
+<li>
+The source file that the variable was defined in is opened.
+</li>
+<li>
+The cursor is on the definition of the variable.<br>
+</li>
+</ol>
+</div>
+<div>
+<a id="v:0p" name="2_2_Finding_references_to_a_de"></a>
+</div>
+<div>
+<h3><a id="_2_3_Switching_Active_Document_9034098435075528" name="_2_3_Switching_Active_Document_9034098435075528"></a>
+2.2: Switching Active Document
+</h3>
+<b>Features:</b> ST-1<br>
+<b>Precondition:</b>&nbsp; Application installed (Case 5).<br>
+<b>Scenario:</b> User indicates which file he wants to be displayed<br>
+</div>
+<div>
+<b>Postcondition</b>: The indicated file is displayed.<br>
+</div>
+<div>
+<h2><a id="_3_Running_Hava_Code_950694360_32235704625015915" name="_3_Running_Hava_Code_950694360_32235704625015915"></a>
+3: Running Hava Code
+</h2>
+<b>Features:</b> RUN-1, RUN-2<br>
+<b>Actor:</b>&nbsp; Norma or Powell<br>
+<b> Stakeholders</b>:&nbsp; Normal and Power Users<br>
+<b>Interests</b>:&nbsp; Usability - running Hava code is a core need of all users.<br>
+<h3><a id="_3_1_User_runs_a_Hava_file_618_7089486116066561" name="_3_1_User_runs_a_Hava_file_618_7089486116066561"></a>
+<b>3.1: User runs a Hava file<br>
+</b>
+</h3>
+<b>Precondition</b>:&nbsp; A file has been created containing Hava source.<br>
+<b>Scenario</b>:<br>
+<ol>
+<li>
+User indicates that a Hava source file should be run.
+</li>
+<li>
+The system builds the source file if it hasn't already.
+</li>
+<li>
+The system executes the Hava code.<br>
+</li>
+</ol>
+<b>Postcondition</b>:&nbsp; The output of the executed file is displayed.<br>
+<b>Alternative Flow</b>: The file contains an error.
+<ol>
+<li>
+The output prior to the program error is displayed.
+</li>
+<li>
+Debugging tools are displayed.
+</li>
+</ol>
+<h2><a id="4_Debugging_Hava_Code_37708382_4894839960578006" name="4_Debugging_Hava_Code_37708382_4894839960578006"></a>
+4: Debugging Hava Code
+</h2>
+<b>Actor: </b>Powell<br>
+<b> Stakeholders:</b> Power Users<br>
+<h3><a id="_4_1_Filtering_Report_72422178_6995283881957336" name="_4_1_Filtering_Report_72422178_6995283881957336"></a>
+4.1 User runs a Hava file in debug mode</h3><b>Features:</b> RPT-2<br>
+<b> Interests:</b>&nbsp; <br>
+<b> Precondition:<br>
+</b>
+<ul><li>
+Application installed (Case 3)
+</li><li>
+A file has been created containing Hava source.
+</li></ul>
+<b>Scenario:</b><br><ol><li>
+User indicates that a Hava source file should be run in debug mode.
+</li><li>
+The system builds the source file if it hasn't already.
+</li><li>
+The system executes the Hava code.</li></ol><b>
+Postcondition:</b> The Debug View displays the details behind how each variable was calculated.<br><b>Alternative Flow</b>: The file contains a syntax error.
+<ol><li>
+The view displays that there is a syntax error, and references the error's location.
+</li></ol><h3><a id="4_2_User_makes_a_syntax_error_" name="4_2_User_makes_a_syntax_error_"></a>4.2: User makes a syntax error</h3><b>Additional Actor:</b> Norma<br><b>Additional Stakeholders: </b>Creators, Normal Users<br><b>Features:</b> ED-2<br>
+<b> Interests:</b><br><ul><li>Accessibility - A language is much easier to learn when the IDE informs you of your syntactic mistakes as you type.</li><li>Usability - Increase efficiency of use by removing the necessity of executing to find syntax errors.<br></li></ul>
+<b> Precondition:<br>
+</b>
+<ul><li>
+Application installed (Case 3)
+</li><li>
+A file has been created containing Hava source.
+</li></ul>
+<b>Scenario:</b><br><ol><li>
+User makes a mistake in syntax.</li><li>On
+build, the system notices the mistake and indicates its cause.&nbsp;
+Builds occur whenever a file is saved or changed enough to be
+considered significantly different by the underlying Eclipse editor.<br></li></ol><b>
+Postcondition:</b> Syntax error is indicated to the user.<br><h3><a id="4_3_Filtering_Report_433843329" name="4_3_Filtering_Report_433843329"></a>4.3: Filtering Report
+</h3>
+<b>Features:</b> RPT-4<br>
+<b> Interests:</b>&nbsp; Usability - keeps the view from being cluttered by unwanted values.<br>
+<b> Precondition:<br>
+</b>
+<ul>
+<li>
+Application installed (Case 3)
+</li>
+<li>
+The Report or Debug view is displaying the results from some Hava code execution<br>
+</li>
+</ul>
+<b>Scenario:</b> User indicates part or all of the name of a variable they wish to view.<b><br>
+Postcondition:</b> The view displays variables that match all or part of the indicated name.<br>
+<h3><a id="_4_2_Sorting_Report_2828277872_5930632681179664" name="_4_2_Sorting_Report_2828277872_5930632681179664"></a>
+4.3: Sorting Report
+</h3>
+<b>Features:</b> RPT-3<br>
+<b>Interests:</b>&nbsp; Usability - Displaying results of programs is a core aspect of the language.<b><br>
+Precondition</b>:<br>
+<ul>
+<li>
+Application installed (Case 5).
+</li>
+<li>
+The Report or Debug view is displaying the results from some Hava code execution
+</li>
+</ul>
+<b>Scenario:</b> User indicates how to sort.&nbsp; The choices are by variable type, by name, or order of appearance in source.<br>
+</div>
+<div>
+<b> Postcondition</b>: The view displays the list of variables in the indicated ordering.<br>
+<h2><a id="_5_Installing_Hava_IDE_1443979_041403120844807906" name="_5_Installing_Hava_IDE_1443979_041403120844807906"></a>
+5: Installing Hava IDE
+</h2>
+<b>Actor: </b> Norma or Powell<br>
+<b> Stakeholders:</b> Normal and Power Users<br>
+<b> Interests:<br>
+</b>
+<ul>
+<li>
+Accessibility - good packaging makes use of Hava much simpler to the average user
+</li>
+<li>
+Flexibility - an installer can offer more flexible options for the power user<br>
+</li>
+</ul>
+<b> Features:</b> PRD-1, PRD-2, PRD-3<br>
+<b>Precondition: </b>User has a supported OS and JRE installed.<br>
+<b>Scenario:</b> User downloads and opens installer.<br>
+<b>Postcondition: </b>Hava, including the language runtime, standalone application, and the Eclipse distribution, are installed.<br>
+<h2><a id="_6_Building_Hava_IDE_from_Sour_45906539403093893" name="_6_Building_Hava_IDE_from_Sour_45906539403093893"></a>
+6: Building Hava IDE from Source
+</h2>
+<b>Actor: </b>Dan<br>
+<b> Stakeholders:</b> Creators and Future Maintainers<br>
+<b> Interests:<br>
+</b>
+<ul>
+<li>
+Accessibility - a source repository and simple build process makes the
+project more accessible for future maintainers and developers and eases
+team development.<br>
+</li>
+<li>
+Maintainability - simpler build processes are easier to maintain<br>
+</li>
+<li>
+Ease of extension - a simple build process is easier to extend<br>
+</li>
+</ul>
+<b> Features:</b> DEV-1, DEV-2<b><br>
+Precondition:<br>
+</b>
+<ul>
+<li>
+User has access and permission to use the source code repository.<br>
+</li>
+<li>
+User has all pre-requisites for the build process installed.<br>
+</li>
+</ul>
+<b>Scenario:<br>
+</b>
+<ol>
+<li>
+User checks out repository from versioning control system.
+</li>
+<li>
+User runs build process.<br>
+</li>
+</ol>
+<b> Postcondition:</b>&nbsp; User has copy of working Hava IDE build.<br>
+</div>
+<br>
+<hr class="pb"><br>
+<h1 style="text-align: center;"><a id="Detailed_Design_79161087792064" name="Detailed_Design_79161087792064"></a>
+Detailed Design
+</h1>
+<h2><a id="Package_Structure_432533472792" name="Package_Structure_432533472792"></a>
+Package Structure
+</h2>
+At the highest level, the design is separated into three packages:<br>
+<br>
+<ul>
+<li>
+Hava Common contains code which is not particular to any specific
+application or user interface, including the actual Hava Engine which
+compiles and runs Hava code.&nbsp; The bulk of this package is the Hava
+language implementation (Hava Core) written by Loren Platzman.&nbsp;
+Some modifications have been made to accomplish debugging features; the
+Debug subpackage contains the hooks into the Hava engine to retrieve
+debugging information.<br>
+</li>
+<li>
+The Application package contains a primitive IDE as both a standalone
+app in the Standalone package, or a web applet in the Applet
+package.&nbsp; It was also written by Loren Platzman.&nbsp; Originally
+the Hava Common and Hava App packages were closer, but to separate
+responsibilities and make package dependancies cleaner, they were
+divided.&nbsp; Hava Gui contains the main Java Swing component of the
+original IDE.&nbsp; Hava Applet and Hava Standalone wrap this component
+to make it an applet or standalone gui application, respectively.
+</li>
+<li>The largest part of the new code belongs in Hava Eclipse, which
+contains all of the Eclipse-specific code for the plugin.&nbsp;
+Following Eclipse convention, this is divided into many smaller
+packages, each containing a single plugin.&nbsp; Hava Feature
+aggregates all of the other plugins so they can be installed as a
+single entity.<br>
+</li>
+</ul>
+<br>
+<div id="wh4w" style="text-align: left;">
+<br>
+<div id="tb.y" style="text-align: left;">
+<div id="ywcm" style="text-align: left;">
+<img src="documentation_files/File.png" height="429" width="484">
+</div>
+<br>
+<br>
+</div>
+<div id="ioxc" style="text-align: left;">
+<hr class="pb">
+<h3><a id="Eclipse_Features_0924953192177_5624150800779912" name="Eclipse_Features_0924953192177_5624150800779912"></a>
+Eclipse Features
+</h3>
+<h4><a id="Builder_05350174095233773_5651" name="Builder_05350174095233773_5651"></a>
+Builder
+</h4>
+</div>
+<div id="j40i" style="text-align: left;">
+The Builder plugin performs a continuous build of Hava files in the
+workspace, re-parsing whenever a file is modified.&nbsp; Its purpose
+for Hava is to detect parse-time errors, generating error markers which
+are used by other plugins to display error messages in other parts of
+the UI.&nbsp; This type of extension in Eclipse also is typically used
+to create persistent resources (such as compiled Java class files), but
+this is not relevant to Hava.<br>
+<h4><a id="Launch_15551593297241573_63194" name="Launch_15551593297241573_63194"></a>
+Launch
+</h4>
+The Launch plugin is used for running Hava files.&nbsp; Its most
+important responsibility is the launch configuration, which executes
+Hava code and sends the result to the views.&nbsp; It also hooks the
+launch configuration into the Eclipse user interface by adding toolbar
+and menu buttons which allow the user to request the execution.<br>
+<h4><a id="Editor_7986784835224918_025992" name="Editor_7986784835224918_025992"></a>
+Editor
+</h4>
+The Editor plugin is is where the UI for document editing lives.&nbsp; It scans and parses Hava documents to apply coloring.<br>
+<h4><a id="Perspective_7834159682303259_0" name="Perspective_7834159682303259_0"></a>
+Perspective
+</h4>
+The Perspective plugin contains configuration for the Hava perspective,
+including its name and icon attributes handles.&nbsp; It contains a
+perspective factory which initializes the default workbench layout with
+the views most essential to Hava development.<br>
+<h4><a id="View_8344051327315197_04395438" name="View_8344051327315197_04395438"></a>
+View
+</h4>
+<p style="font-weight: normal;">
+<a id="The_View_plugin_holds_the_UI_t" name="The_View_plugin_holds_the_UI_t"></a>The View plugin holds the UI that displays the output of a Hava run, as well as the debugger for the same run.
+</p>
+<h4><a id="Common_5036318294527322_350161" name="Common_5036318294527322_350161"></a>
+Common
+</h4>
+The Common plugin is a place for any code which is specific to both Hava and Eclipse, but does not fit in any other plugin.<br>
+<br>
+<br>
+<div id="z432" style="text-align: left;">
+<div id="rdqc" style="text-align: left;">
+<div id="h7dm" style="text-align: left;">
+<img src="documentation_files/File_002.png" height="306" width="377">
+</div>
+<br></div>
+</div>
+</div>
+</div>
+<div id="ebuc" style="text-align: left;"><br>
+<hr class="pb">
+<h2><a id="_Dynamic_Design_47289185395296" name="_Dynamic_Design_47289185395296"></a>
+Dynamic Design
+</h2>
+<a id="_Opening_a_Hava_file_and_launc_2755583527240085" name="_Opening_a_Hava_file_and_launc_2755583527240085"></a>
+<h3><a id="Interactions_Between_Eclipse_P_5621188524943269" name="Interactions_Between_Eclipse_P_5621188524943269"></a>
+Interactions Between Eclipse Plugins<br>
+</h3>
+<p style="text-align: justify;">
+The Eclipse IDE has a plug-in architecture that handles common IDE
+functionality.&nbsp; It uses an event-driven design to pass information
+to the different parts of the IDE.&nbsp; This is done through extension
+points.&nbsp; Each extension point can contact other parts of the
+plugin or other plugins through an IContactRegistry.<br>
+</p>
+<p style="text-align: justify;">
+<br>
+</p>
+<p style="text-align: justify;">
+Coupling between plugins is generally very low.&nbsp; For instance, the
+Perspective plugin initially activates two Hava views, but the View
+plugin is not in Perspective's classpath - instead of directly dealing
+with the views, it requests them from the IDE, referencing them by a
+string identifier.<br>
+</p>
+<h3><a id="Continuous_Parsing_32258507962_14437666914199854" name="Continuous_Parsing_32258507962_14437666914199854"></a>
+Continuous Parsing<br>
+</h3>
+<div style="text-align: justify;">
+The Builder and Editor plugins both parse Hava files as they are modified.<br>
+</div>
+<br>
+<div style="text-align: justify;">
+When any file in the workspace changes, Eclipse fires an event which is
+recieved by the project's builders. Hava projects have a HavaBuilder.
+When the builder catches this event, it checks if enough text has
+changed to warrant a rebuild. As an IncrementalBuilder, it has the
+option to try to recompile just the regions that have changed. If this
+is not feasible, it will rebuild the entire file as well as any
+dependencies within the project. These rebuilds are done through the
+Hava Engine provided by the Common Package. If any problems are found
+in the syntax, HavaBuilder creates an error IMarker and attaches it to
+the IFile resource. Adding this marker causes the Eclipse framework to
+add error annotations to the Project Explorer view, Problems view, and
+Hava editor (if the file is currently open).<br>
+</div>
+<br>
+<div style="text-align: justify;">
+When a file is modified inside the Hava editor, HavaEditor's
+DocumentProvider breaks it into regions. The DocumentProvider then
+fires an event to Eclipse notifying it that the regions have changed.
+The HavaEditor catches this event and recolors each region and checks
+it for errors again using the PresentationReconciler.
+</div>
+<h3><a id="Debug_Listeners_74606974837959_6232777627785819" name="Debug_Listeners_74606974837959_6232777627785819"></a>
+Debug Listeners
+</h3>
+<div style="text-align: justify;">As the HEngine executes, it fires
+events to provide information to debugging tools.&nbsp; A class which
+listens on debug events must implement the HDebugListener interface,
+and an instance must be hooked up to the engine by calling
+HEngine#addDebugListener(HDebugListener) to begin receiving events.<br>
+</div>
+<h3><a id="Launching_6381944903368637_505" name="Launching_6381944903368637_505"></a>
+Launching
+</h3>
+When the user requests that a Hava file be run, Eclipse calls the
+launch method of HavaLaunchConfigurationDelegate, providing the
+following information:<br>
+<ul style="text-align: justify;">
+<li>
+The ILaunchConfiguration (knows which file to run)
+</li>
+<li>
+The launch mode string ("run" or "debug")
+</li>
+<li>
+An IProgressMonitor (used to detect if the user cancels the launch)
+</li>
+</ul>
+<br>
+<span style="background-color: rgb(255, 255, 255);">This method instantiates a LaunchTask to handle running the Hava code.&nbsp; </span><span style="background-color: rgb(255, 255, 255);">Based on the requested launch mode</span><span style="background-color: rgb(255, 255, 255);">, this is either a RunTask or a DebugTask</span><span style="background-color: rgb(255, 255, 255);">.&nbsp;
+The difference between a "run" and a "debug" launch is the amount of
+information collected, so these differ only in which HDebugListeners
+are applied.</span><br>
+<br>
+<span style="background-color: rgb(255, 255, 255);">After running the
+Hava engine, the results are sent to the view.&nbsp; Because the launch
+code is not executed in a UI thread, it cannot interact directly with
+the workbench.&nbsp; Instead, it creates a Runnable called LaunchUITask
+to update the view. This is passed as an argument to </span>Display.getDefault().asyncExec(Runnable), and Eclipse's UI thread runs it.<br>
+<h3><a id="Aborting_a_Launch_802416115044_33143288850817565" name="Aborting_a_Launch_802416115044_33143288850817565"></a>
+<span style="background-color: rgb(255, 255, 255);">Aborting a Launch<br>
+</span>
+</h3>
+<div style="text-align: justify;">
+<div style="text-align: justify;">
+<span style="background-color: rgb(255, 255, 255);">To cause an HEngine to abort its execution, an </span><span style="background-color: rgb(255, 255, 255);">HEngine
+can be given one or more HProgressMonitors.&nbsp; An HProgressMonitor
+has a boolean checkAbort() method, so that as the engine runs, it can
+periodically check whether any of its progress monitors have requested
+an abort.&nbsp; There are two events that can trigger an abort: if the
+user specifically requests it, or if system memory is running low.</span><br>
+<br>
+<span style="background-color: rgb(255, 255, 255);">The Eclipse
+framework provides a mechanism for cancelling a launch.&nbsp; The
+return value of IProgressMonitor's boolean isCanceled() method
+indicates whether a cancel has been requested.&nbsp; The
+IProgressMonitor is trivially wrapped in an HProgressMonitor called
+HavaMonitor.</span><br>
+<br>
+<span style="background-color: rgb(255, 255, 255);">Sometimes a Hava
+script needs to be aborted because it requires more than the available
+amount of memory.&nbsp; As memory usage approaches this limit,
+application performance degrades unacceptably.&nbsp; To get around this
+problem, another HProgressMonitor called MemoryMonitor is added.&nbsp;
+MemoryMonitor polls java.lang.Runtime to approximate the percentage of
+used memory and abort if it exceeds some threshold.&nbsp; Instead of
+running in a separate thread, MemoryMonitor is implemented as an
+HDebugListener, and its poll interval is defined as some number of
+debug events.</span><br>
+</div>
+</div>
+<h3><a id="Swing_Applications_54830997910_04258894574167604" name="Swing_Applications_54830997910_04258894574167604"></a>
+Swing Applications<br>
+</h3>
+Both the standalone application and the applet are centered around the
+HPanel class, which constructs and controls the rest of the
+components.&nbsp; It runs two threads, referred to as the monitor and
+work threads.<br>
+<ul style="text-align: justify;">
+<li>
+The monitor thread runs continually, probing the input JTextArea to detect changes.
+</li>
+<li>
+When a change in the JTextArea occurs, the monitor thread sends the Hava code to the work thread.<br>
+</li>
+<li>
+If the work thread is already active, it halts its current execution.
+</li>
+<li>
+It then starts to compile and run the new code using the Hava engine in
+the Common package.&nbsp; If the Trace checkbox is checked, it first
+adds a TraceDebugListener to the engine.<br>
+</li>
+<li>
+When the work thread finishes running the Hava script, it writes the
+resulting report (or the Trace output) into the HPanel's output
+JTextArea.
+</li>
+</ul>
+<br>
+<hr class="pb">
+<h2><a id="Data_Design_6496519823818424_9" name="Data_Design_6496519823818424_9"></a>
+Data Design
+</h2>
+</div>
+<br>For debugging purposes, a tree of variable names and values is
+built while the source is being compiled.&nbsp; Each node represents a
+variable or a statement, and its children are the variables it depends
+on.&nbsp; The root nodes are variables that no other variables depend
+on.&nbsp; This structure is only maintained in memory, and never gets
+written to disk.<br>
+<br>
+The sole persistent data source in the Hava IDE are the hava source
+files.&nbsp; They are text files with a .hava extension and contain the
+source code that the IDE compiles and runs.<br>
+<br>
+The full format specification for the source code can be found here:<br>
+<br>
+<div style="margin-left: 40px;">
+www2.isye.gatech.edu/people/faculty/Steven_Hackman/Hava/HavaTechnicalReference.pdf<br>
+</div>
+<hr class="pb"><br>
+<h1 style="text-align: center;"><a id="Design_Validation_662192521961_9559686632577862" name="Design_Validation_662192521961_9559686632577862"></a>
+Design Validation
+</h1>
+<h2><a id="Traceability_Analysis_49739992_32409610195379235" name="Traceability_Analysis_49739992_32409610195379235"></a>
+Traceability Analysis
+</h2>
+<p>
+The following data is a basic traceability analysis, where features, on
+the left, were drawn from our product backlog, and the covering design
+elements were shown on the right. Branding features, which usually
+involve replacing files on an Eclipse installation instead of some
+architectural goal, were skipped, as were internal backlog entries.
+</p>
+<p>
+<br>
+</p>
+<p>
+&nbsp;
+</p>
+<div>
+<table class="zeroBorder" id="uj7_" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td width="20%">
+RPT-1
+</td>
+<td width="40%">
+Report View
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.views.solution</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">RUN-1</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Run a Hava File</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.runaction<br>
+hdt.launch</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">ED-1</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Syntax coloring</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">hdt.editor</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">RPT-2</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Debug view</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">hdt.views.debug</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">RUN-2</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Builder integration</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">hdt.builder</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">NAV-1</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Hava project creation</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.wizards</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">NAV-2</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Open Declaration</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">hdt.views.solution, </span><span style="font-style: normal;">hdt.views.debug</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">RPT-3</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Report sorting</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.view.solution, </span><span style="font-style: normal;">hdt.views.debug</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">RPT-4</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Report filtering</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.view.solution, </span><span style="font-style: normal;">hdt.views.debug</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">ED-2</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Syntax checking</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.builder</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">ED-3</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Content Assist</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> hdt.editor</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">ED-5</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Code Folding</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> Not covered</span><br></td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">ED-6</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Reference Hierarchy</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> Not covered</span>
+</td>
+</tr>
+<tr>
+<td width="20%">
+<span style="font-style: normal;">HLP-1:3</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;">Help features</span>
+</td>
+<td width="40%">
+<span style="font-style: normal;"> Not covered</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+&nbsp;
+</p>
+<div>
+</div>
+<br>
+<h2><a id="SAAM_Analysis_4948931783349737" name="SAAM_Analysis_4948931783349737"></a>
+SAAM Analysis
+</h2>
+<h3 class="western"><a id="Future_Features_47406496534832_9486057611449801" name="Future_Features_47406496534832_9486057611449801"></a>
+Future Features
+</h3>
+<h4><a id="Code_Completion_39575100776445" name="Code_Completion_39575100776445"></a>
+<i>Code Completion</i>
+</h4>
+<p>
+<span style="font-style: normal;">To implement code completion- called
+content assist in the Eclipse framework- the
+HavaSourceViewerConfiguration, found in the hdt.editor package, needs
+to be edited, and implementations of IContentAssistant and
+IContentAssistProcessors need to be placed in the same package.
+hdt.editor also needs an appropriate action or command- depending on
+which API is used- implemented to attach a keyboard shortcut or button
+to the editor interface.</span>
+</p>
+<h4><a id="Code_Generation_74252806867676" name="Code_Generation_74252806867676"></a>
+<i>Code Generation</i>
+</h4>
+<p>
+<span style="font-style: normal;">To add code generation, a few things
+need to be done. An easily traversable document object model needs to
+be created for each Hava source file every time the file is built,
+affecting the hdt.builder package. This DOM needs to be stored in the
+workspace as a resource of the current project. An action or command
+implementing the code generations needs to be created in hdt.builder,
+and associated with Hava source files by the HavaNature.</span>
+</p>
+<h4><a id="Opening_Hava_Source_from_a_URL" name="Opening_Hava_Source_from_a_URL"></a>
+<i>Opening Hava Source from a URL</i>
+</h4>
+<p>
+<span style="font-style: normal;">First, IStorageInput needs to be
+implemented in the hdt.editor package to allow read-only source from a
+URL to act as an editor input. Then, the jump-to-declaration action in
+hdt.views.solution.tree needs to recognize URL imports, and open them
+as the new URL implementation of IStorageInput, instead of the usual
+IEditorInput.</span></p><p><br></p><p><span style="font-style: normal;">Note:&nbsp;
+This feature was implemented in the third sprint.&nbsp; The above
+analysis was correct, except that a more general Eclipse command was
+subclassed for re-use by other plugins.<br></span>
+</p>
+<h2><a id="Summary_7802630028262806_41337_8214790394002564" name="Summary_7802630028262806_41337_8214790394002564"></a>
+Summary
+</h2>
+<p>
+The traceability analysis was revealing. Most of our features were
+covered by one to two packages, suggesting that features were organized
+modularly. The analysis also revealed that we have yet to work out the
+Eclipse help system, or design a package in our plug-in to provide for
+help.
+</p>
+<p>
+<br>
+</p>
+<p>The plausible future features in the SAAM analysis suggest that our
+architecture was fairly well chosen. Each feature primarily affects one
+package; other packages are affected only because of user interface
+components whose location is mandated by Eclipse standards.
+</p>
+<hr class="pb"><br>
+<h1 style="text-align: center;"><a id="Design_Rationale_8050598945592" name="Design_Rationale_8050598945592"></a>
+Design Rationale
+</h1>
+<br>
+<p>
+<span style="font-weight: normal;">The central architectural question
+involved in our senior design project was whether to primarily extend
+the existing Hava editor, or use the Eclipse framework to create a
+newer, more powerful Hava IDE. The two directions differ significantly
+both in view of architecture and our client's requirements.</span>
+</p>
+<h2 class="western"><a id="Solution_Comparison_9103846697_6534323801230515" name="Solution_Comparison_9103846697_6534323801230515"></a>
+Solution Comparison
+</h2>
+<h3 class="western"><a id="Standalone_Enhancement_6786764_8252265780388277" name="Standalone_Enhancement_6786764_8252265780388277"></a>
+Standalone Enhancement
+</h3>
+<h4 class="western"><a id="Description_33203072754717655__5057371121878899" name="Description_33203072754717655__5057371121878899"></a>
+Description
+</h4>
+<p>
+The existing Hava editor, a Swing application with basic file I/O
+capabilities, an editing pane, and an output/trace pane, offered a base
+line for the project, and an opportunity for extension.
+</p>
+<h4 class="western"><a id="Advantages_6278928319786714_11_9922792870571269" name="Advantages_6278928319786714_11_9922792870571269"></a>
+Advantages
+</h4>
+<h5><a id="Architecture_tailored_to_our_s_9412851293326613" name="Architecture_tailored_to_our_s_9412851293326613"></a>
+<i>Architecture tailored to our solution</i>
+</h5>
+<p>The architecture behind improvements to the current Hava editor has
+the advantage of being lean and mean. After a large refactor of the
+existing user iterface, design will be practically ground up; the new
+editor will not have a single architectural feature for which it does
+not have an obvious need, in contrast to the hoop-jumping frameworks
+sometimes require.
+</p>
+<h4><a id="Better_control_over_user_inter_048964750818441205" name="Better_control_over_user_inter_048964750818441205"></a>
+<i>Better control over user interface</i>
+</h4>
+<p>
+Enhancing the current editor allows us free reign to design an interface to best work for the projected typical Hava user.
+</p>
+<h4 class="western"><a id="Disadvantages_3731381142844419" name="Disadvantages_3731381142844419"></a>
+Disadvantages
+</h4>
+<h5><a id="Difficult_given_time_constrain_9005854702011216" name="Difficult_given_time_constrain_9005854702011216"></a>
+<i>Difficult given time constraints</i>
+</h5>
+<p>
+<span style="font-style: normal;">The scope of the project will be difficult to fulfill, from the ground up, with the summer's time constraints.</span>
+</p>
+<h5><a id="Opposition_to_code_base_120017_6440410388255415" name="Opposition_to_code_base_120017_6440410388255415"></a>
+<i>Opposition to code base</i>
+</h5>
+<p>The current code base is not necessarily a great launching point for
+some of the client's requirements. The user interface code was not
+built to be extended, and many of the features required of an editor
+now were not foreseen at the editor's inception.
+</p>
+<h3 class="western"><a id="Eclipse_Integration_4989057805_3724437514923685" name="Eclipse_Integration_4989057805_3724437514923685"></a>
+Eclipse Integration
+</h3>
+<h4 class="western"><a id="Description_45645408884085914_" name="Description_45645408884085914_"></a>
+Description
+</h4>
+<p>Eclipse is an plug-in based IDE that has evolved into a full
+application framework. Not only are there plug-ins for development in
+Java, its native language, and many other higher level languages, but
+also a slew of software design and development tools, and even tools
+for managing projects at a level much higher than a traditional IDE.
+The flexibility of the platform increases the complexity; integrating a
+language fully with Eclipse requires a serious effort.
+</p>
+<h4 class="western"><a id="Advantages_25301375891871747_5" name="Advantages_25301375891871747_5"></a>
+Advantages
+</h4>
+<h5><a id="Existing_code_base_76501222331_14155125743600794" name="Existing_code_base_76501222331_14155125743600794"></a>
+<i>Existing code base</i>
+</h5>
+<p>Many of the features driving our project have already been
+implemented in the existing Eclipse code base. Multi-file and tabbed
+editing, frameworks for syntax highlighting, in-editor help, and
+debugging can all be found in Eclipse. Eclipse also defines user
+interface standards so that plug-ins work similarly to one another and
+that the entire IDE remains consistent to the user.
+</p>
+<h5><a id="Modularity_9733169499862528_96" name="Modularity_9733169499862528_96"></a>
+<i>Modularity</i>
+</h5>
+<p>The Eclipse plug-in registry enforces design modularity. Different
+functional pieces of an Eclipse plug-in are not allowed to interact,
+except through a static registry lookup, seriously reducing coupling.
+For this same reason, plug-in components are easily swapped.
+</p>
+<h5><a id="Maintainability_18459421118419_8182843950488453" name="Maintainability_18459421118419_8182843950488453"></a>
+<i>Maintainability</i>
+</h5>
+<p>
+<span style="font-style: normal;">Eclipse already claims a large
+developer base. Future Hava maintainers familiar with Eclipse will be
+given an edge, and will also benefit from extensive Eclipse
+documentation to supplement that of our project.</span>
+</p>
+<h5><a id="Extensibility_7448750943869277" name="Extensibility_7448750943869277"></a>
+<i>Extensibility</i>
+</h5>
+<p>
+<span style="font-style: normal;">Plug-in fragments allow easy plug-in
+extension in the Eclipse framework. The plug-in registry also makes is
+possible for future plug-ins to easily cooperate with the Hava IDE.</span>
+</p>
+<h5><a id="Popularity_9010756590642324_89" name="Popularity_9010756590642324_89"></a>
+<i>Popularity</i>
+</h5>
+<p>
+<span style="font-style: normal;">Hava's integration with Eclipse, an already popular platform, might help popularize the Hava language itself.</span>
+</p>
+<h4 class="western"><a id="Disadvantages_9597131057214588_9935519307373285" name="Disadvantages_9597131057214588_9935519307373285"></a>
+Disadvantages
+</h4>
+<h5><a id="Weight_37551732553240347_56406" name="Weight_37551732553240347_56406"></a>
+<i>Weight</i>
+</h5>
+<p>
+<span style="font-style: normal;">The Eclipse framework might prove to be too cumbersome for a project with the size and time constraints of our own.</span>
+</p>
+<h5><a id="Models_of_Use_0498883229194037_4981868035266006" name="Models_of_Use_0498883229194037_4981868035266006"></a>
+<i>Models of Use</i>
+</h5>
+<p>
+Certain interface paradigms, such as workspaces, projects, an
+auto-bulding IDE, and run configurations, are foreign to the project
+typical Hava IDE user. These would need to be hidden or well explained
+to keep the IDE accessible to those that aren't used to modern IDEs.
+</p>
+<h2 class="western"><a id="Summary_8068720916828738_74771" name="Summary_8068720916828738_74771"></a>
+Summary
+</h2>
+<p>Our client's requirements are a roughly prioritized list of IDE
+features, including better debuggability and syntax coloring without
+the sacrifice of existing features, accessibility for new users of the
+Hava language, and other potential features focused on increasing the
+popularity of the Hava language and creating a more effective work-flow
+for power users of the language. The existing Hava editor offered a
+relatively clean canvas for the project. Syntax coloring would be
+simple to implement in such an environment, but other IDE features,
+like tabbed editing, syntax checking, and, most importantly, a strong
+debugging environment, would be very difficult. On the other hand, the
+Eclipse framework is used often for these very features. Integrating
+Hava with the Eclipse framework allows a much richer feature set than
+writing the editor nearly from scratch, and also offers a more
+professional tool that is built to be maintained and extended.
+</p>
+<h2 class="western"><a id="Solution_4385089922516423_5511" name="Solution_4385089922516423_5511"></a>
+Solution
+</h2>
+<p>
+<span style="font-weight: normal;">We decided, based on our features
+requirements and constraints, to focus on Eclipse integration, and to
+add features to the existing editor when there was enough overlap to
+justify doing so.</span><br>
+<br>
+The choice to use such an extensive framework is in strong
+architectural contrast to the option of building on the existing editor.<br>
+<br>
+The Eclipse framework's architectural rigor is obvious. It supports a
+vast number of different plug-ins, and is used as a building block for
+many other large applications that are only tangentially related to the
+IDE.&nbsp; For this&nbsp; reason, designing for the Eclipse framework
+is less an act of creating a strong architecture than it is a study of
+existing methods.&nbsp; Many of the detailed design choices were
+removed or made simpler; instead, our design phase has consisted of
+synthesis of documentation into a working model of the Eclipse
+framework, and our plug-in's relation to that framework.
+</p>
+<hr class="pb"><br>
+<a id="Validation_Testing_56140611976" name="Validation_Testing_56140611976"></a>
+<h1 style="text-align: center;"><a id="_Test_Plan_4326883053801214_44" name="_Test_Plan_4326883053801214_44"></a>
+Test Plan
+</h1>
+<br>The product is an IDE for the Hava language, for which a parser and
+interpeter has already been written.&nbsp; The majority of our new code
+consists of add-ons to the Eclipse application, but we also need to
+maintain the quality of the Hava core interpreter.<br>
+</div>
+<h2><a id="_Strategy_6397636309397461_275" name="_Strategy_6397636309397461_275"></a>
+Strategy
+</h2>
+<h3><a id="_Roles_4752455428190524_709373" name="_Roles_4752455428190524_709373"></a>
+Roles
+</h3>
+<ul>
+<li>
+Chris - Testing lead
+</li>
+<li>
+Matt - Testing associate
+</li>
+<li>
+Beau - Documentation quality<br>
+</li>
+</ul>
+<h3><a id="_Black_box_Testing_65980782139" name="_Black_box_Testing_65980782139"></a>
+Black-box Testing<br>
+</h3>
+Most testing deals mostly with the user interface.&nbsp; Our code is
+more about connecting and configuring third-party components, so it
+does not contain a great deal of unit-testable logic. &nbsp; Due to the
+temporal limits of this project, automated UI testing is not worth the
+initial setup overhead.&nbsp; UI components are tested at the end of
+each week using the manual walkthrough UI tests enumerated below.
+<h3><a id="_White_box_Testing_41754699426" name="_White_box_Testing_41754699426"></a>
+White-box Testing<br>
+</h3>The biggest potential source of logical errors is the Hava
+interpreter.&nbsp; This component ought to be unit tested heavily (and
+isn't), but is not our responsibility because we do not have
+significant ownership over it.&nbsp; However, some amount of testing
+may be appropriate for the minimal changes we have made to support our
+new functionality, particularly relating to the interpreter's new
+debugging interface.&nbsp; JUnit is used where appropriate.<br>
+<h3><a id="_System_Testing_98346844532817" name="_System_Testing_98346844532817"></a>
+System Testing
+</h3>
+The Eclipse projects are platform-agnostic, so only the installation
+packages will need to be tested on each supported platform.&nbsp;
+Windows Vista is the only platform the sponsors care to support,
+however, so testing on multiple systems is not worthwhile.
+<h3><a id="_Bug_Handling_1621934025909500" name="_Bug_Handling_1621934025909500"></a>
+Bug Handling<br>
+</h3>
+This document details the testing procedure.&nbsp; The results of failed tests are logged in Bugzilla.<br>
+<br>
+<div style="margin-left: 40px;">
+http://luongo.slyip.com/bugs/<br>
+<br>
+</div>Bugzilla issues are categorized by the package to which they most
+closely pertain, and given a priority corresponding to the priority of
+the feature which has the bug.<br>
+<h2><a id="_Adequacy_Criteria_85441678050" name="_Adequacy_Criteria_85441678050"></a>
+Adequacy Criteria
+</h2>
+For manual walkthrough UI testing to be covered adequately:<br>
+<ul>
+<li>
+Each element of the user interface (including each menu item and
+toolbar element), including menu and toolbar items, must be involved in
+at least one test case.
+</li>
+<li>
+Each use case must have test cases corresponding to its primary and alternative flows.
+</li>
+</ul>
+<br>
+Because of our low emphasis of white-box testing, we have no specific criteria for adequacy of white-box tests.<br>
+<br>
+<hr class="pb">
+<div>
+<h2><a id="_Test_Cases_4700369171921588_8" name="_Test_Cases_4700369171921588_8"></a>
+Test Cases
+</h2>
+<p class="MsoNormal">
+</p>
+<a id="_1_User_creates_a_Hava_project_25558800938840665" name="_1_User_creates_a_Hava_project_25558800938840665"></a><br>
+<h3><a id="_1_User_creates_a_Hava_project_2902178568628606" name="_1_User_creates_a_Hava_project_2902178568628606"></a>
+1: User creates a Hava project
+</h3>
+<p class="MsoNormal">
+</p>
+<div>
+</div>
+<div>
+<table class="zeroBorder" id="as4:" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td width="20%">
+<b>Requirement</b><br>
+</td>
+<td width="35%">
+<b>Action</b><br>
+</td>
+<td width="35%">
+<b>Expected Result</b><br>
+</td>
+<td width="10%">
+<b>Status</b><br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding "new Hava project" option<br>
+</td>
+<td style="text-align: left;" width="35%">
+Click the arrow next to the "New" toolbar button<br>
+</td>
+<td style="text-align: left;" width="35%">
+"Hava Project" appears in the drop-down menu<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding "new Hava project" option
+</td>
+<td style="text-align: left;" width="35%">
+Click "File" menu, hover over "new..." option<br>
+</td>
+<td style="text-align: left;" width="35%">
+"Hava Project" appears in the side menu<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding "new Hava project" option
+</td>
+<td style="text-align: left;" width="35%">
+Right-click in the Navigator view, hover over "new..." option
+</td>
+<td style="text-align: left;" width="35%">
+"Hava Project" appears in the side menu
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Opening Hava project wizard<br>
+</td>
+<td style="text-align: left;" width="35%">
+Click "Hava Project"
+</td>
+<td style="text-align: left;" width="35%">
+Hava new project wizard appears
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Entering project name<br>
+</td>
+<td style="text-align: left;" width="35%">
+Leave the name field empty<br>
+</td>
+<td style="text-align: left;" width="35%">
+Button is disabled<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Entering project name<br>
+</td>
+<td style="text-align: left;" width="35%">
+Enter "my hava project" in the name field<br>
+</td>
+<td style="text-align: left;" width="35%">
+Finish button is enabled<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Entering project name<br>
+</td>
+<td style="text-align: left;" width="35%">
+Click Finish button<br>
+</td>
+<td style="text-align: left;" width="35%">
+Hava project is created, shows up in Navigator view<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><a id="2_Creating_a_new_Hava_file_6856661487611476" name="2_Creating_a_new_Hava_file_6856661487611476"></a>2: Creating a new Hava file</h3>
+<table class="zeroBorder" id="wy2n" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Creating a new Hava file<br>
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct</td></tr></tbody></table><h3><a id="_2_User_opens_the_Hava_editor__8019995138285557" name="_2_User_opens_the_Hava_editor__8019995138285557"></a> 3: User opens the Hava editor
+</h3>
+<div>
+</div>
+<table class="zeroBorder" id="oaln" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b><br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Opening a Hava file<br>
+</td>
+<td style="text-align: left;" width="35%">
+<table class="zeroBorder" id="odjt" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Double Click "KnapsackExample.02.hava" in the Navigator<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align: left;" width="35%">
+The "KnapsackExample.02.hava" code shows up in the editor<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Opening a Hava file<br>
+</td>
+<td style="text-align: left;" width="35%">
+&nbsp;Right Click "KnapsackExample.02.hava" in the Navigator<br>
+</td>
+<td style="text-align: left;" width="35%">
+The "KnapsackExample.02.hava" code shows up in the editor
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Opening an already opened File<br>
+</td>
+<td style="text-align: left;" width="35%">
+Open "KnapsackExample.02.hava" after it already has a tab in the Editor<br>
+</td>
+<td style="text-align: left;" width="35%">
+Focus changes to the "KnapsackExample.02.hava" tab in the Editor<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Opening a non-Hava file<br>
+</td>
+<td style="text-align: left;" width="35%">
+Double Click "TestFile.txt"<br>
+</td>
+<td style="text-align: left;" width="35%">
+The "TestFile.txt" shows up in the editor using the text editor<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<a id="1_3_User_edits_a_Hava_file_240" name="1_3_User_edits_a_Hava_file_240"></a><br>
+<h3><a id="_3_User_edits_a_Hava_file_8927_7880225896086696" name="_3_User_edits_a_Hava_file_8927_7880225896086696"></a> 4: User edits a Hava file
+</h3>
+<table class="zeroBorder" id="g:om" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b><br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Highlighting<br>
+</td>
+<td style="text-align: left;" width="35%">
+Open "KnapsackExample.02.hava"<br>
+</td>
+<td style="text-align: left;" width="35%">
+Hava reserved words are colored red<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Highlighting
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="35%">
+Hava language functions and iterators are colored purple<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Highlighting
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="35%">
+Inline and block comments are colored green<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Highlighting
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="35%">
+All other text is black<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Checking<br>
+</td>
+<td style="text-align: left;" width="35%">
+Open "BadCode.hava"<br>
+</td>
+<td style="text-align: left;" width="35%">
+The editor has an error marker on line 1<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Checking
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="35%">
+Hovering over line 1 shows the message: Incorrect syntax.<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Checking
+</td>
+<td style="text-align: left;" width="35%">
+Open "DuplicateDefinition.hava"<br>
+</td>
+<td style="text-align: left;" width="35%">
+The editor has an error marker on line 5<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Syntax Checking
+</td>
+<td style="text-align: left;" width="35%">
+<br>
+</td>
+<td style="text-align: left;" width="35%">
+Hovering over line 5 shows the message: Duplicate definition of "a".<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<a id="_1_3_User_deletes_a_Hava_file__7909442154481537" name="_1_3_User_deletes_a_Hava_file__7909442154481537"></a><br>
+<h3><a id="4_User_deletes_a_Hava_file_620_9784704835504853" name="4_User_deletes_a_Hava_file_620_9784704835504853"></a> 5: User deletes a Hava file
+</h3>
+<table class="zeroBorder" id="v8ni" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b><br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Deleting a file<br>
+</td>
+<td style="text-align: left;" width="35%">
+Create "DeleteMe.hava" then click the file in the Navigator and press the 'Delete' key.&nbsp; Press 'OK' on the following dialog<br>
+</td>
+<td style="text-align: left;" width="35%">
+The file is no longer in the Navigator<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Deleting a file<br>
+</td>
+<td style="text-align: left;" width="35%">
+Create "DeleteMe.hava" then right click on the file in the Navigator and select 'Delete'<br>
+</td>
+<td style="text-align: left;" width="35%">
+The file is no longer in the Navigator
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+</tbody>
+</table>
+<a id="_5_Finding_a_declaration__26235195849525905" name="_5_Finding_a_declaration__26235195849525905"></a><br>
+<h3><a id="5_Finding_a_declaration_302623_6287783316363067" name="5_Finding_a_declaration_302623_6287783316363067"></a>6: Finding a declaration
+</h3>
+<table class="zeroBorder" id="bek_" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding a declaration<br>
+</td>
+<td style="text-align: left;" width="35%">
+Run "KnapsackExample.02.hava".&nbsp; Right click on the 'R' variable and select 'Open Declaration'<br>
+</td>
+<td style="text-align: left;" width="35%">
+The line where the 'R' variable is declared is highlighted in the editor<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<a id="gkyz" name="2_2_Finding_references_to_a_de"></a>
+</div>
+<div>
+<a id="_6_Switching_Active_Document_" name="_6_Switching_Active_Document_"></a>
+</div>
+<div>
+<a id="_3_Running_Hava_Code_950694360_022448071040867656" name="_3_Running_Hava_Code_950694360_022448071040867656"></a>
+<h3>
+<a id="_7_User_runs_a_Hava_file__815424664076164" name="_7_User_runs_a_Hava_file__815424664076164"></a>&nbsp;
+</h3>
+<h3><a id="6_User_runs_a_Hava_file_449264_6966160653008314" name="6_User_runs_a_Hava_file_449264_6966160653008314"></a> <b>7: User runs a Hava file<br>
+</b>
+</h3>
+<table class="zeroBorder" id="e1l4" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding Hava launch option<br>
+</td>
+<td style="text-align: left;" width="35%">
+Right-click on a .hava file in the Navigator, mouse over "run as..."<br>
+</td>
+<td style="text-align: left;" width="35%">
+"Hava Script" is in the list of launch options<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding Hava launch option
+</td>
+<td style="text-align: left;" width="35%">
+Right-click a different file (not .hava), mouse over "run as..."<br>
+</td>
+<td style="text-align: left;" width="35%">
+"Hava Script" is not in the list of launch options<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Finding Hava launch option
+</td>
+<td style="text-align: left;" width="35%">
+Open a .hava file, right click in the editor, mouse over "run as..."<br>
+</td>
+<td style="text-align: left;" width="35%">
+"Hava Script" is in the list of launch options
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Viewing the result<br>
+</td>
+<td style="text-align: left;" width="35%">
+Run a Hava file which has no errors<br>
+</td>
+<td style="text-align: left;" width="35%">
+The calculated values are all displayed in the Solution view<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Viewing the result<br>
+</td>
+<td style="text-align: left;" width="35%">
+Run a Hava file which generates a runtime error<br>
+</td>
+<td style="text-align: left;" width="35%">
+The Solution view displays the values which were calculated, and displays the error message<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Viewing the result<br>
+</td>
+<td style="text-align: left;" width="35%">
+Run a Hava file which has a syntax error<br>
+</td>
+<td style="text-align: left;" width="35%">
+The Solution view displays the error message<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<a id="7_Automatic_Hava_running_04525_12607673008154607" name="7_Automatic_Hava_running_04525_12607673008154607"></a>
+<a id="4_Debugging_Hava_Code_37708382" name="4_Debugging_Hava_Code_37708382"></a>
+<h3><a id="_9_Filtering_Report_2613368121_8646981754305048" name="_9_Filtering_Report_2613368121_8646981754305048"></a> 8: Filtering Report
+</h3>
+<table class="zeroBorder" id="w5ic" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Filtering a report<br>
+</td>
+<td style="text-align: left;" width="35%">
+Run "KnapsackExample.02.hava".&nbsp; Type 'opt' in the Filter textbox of the Solution View.<br>
+</td>
+<td style="text-align: left;" width="35%">
+Only variables whose name contains 'opt' show in the Solution View<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3><a id="_4_2_Sorting_Report_2828277872" name="_4_2_Sorting_Report_2828277872"></a> 9: Sorting Report
+</h3>
+<table class="zeroBorder" id="haeo" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" width="20%">
+<b>Requirement</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Action</b><br>
+</td>
+<td style="text-align: left;" width="35%">
+<b>Expected Result</b><br>
+</td>
+<td style="text-align: left;" width="10%">
+<b>Status</b>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" width="20%">
+Sorting Report<br>
+</td>
+<td style="text-align: left;" width="35%">
+Run "KnapsackExample.02.hava".&nbsp; Click 'Sort Variables' so that the button is depressed.<br>
+</td>
+<td style="text-align: left;" width="35%">
+All the variables in the Solution View are sorted alphabetically<br>
+</td>
+<td style="text-align: left;" width="10%">
+correct<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<a id="_12_Menu_Options__6756941502018179" name="_12_Menu_Options__6756941502018179"></a><br>
+<h3><a id="10_Menu_Options_97537528657291_2757424714422867" name="10_Menu_Options_97537528657291_2757424714422867"></a> 10: Menu Options
+</h3>
+Ensure that each menu option is relevant to Hava.<br>
+<br>
+<table class="zeroBorder" id="zqys" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" height="219" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" valign="top">
+<b>Menu</b><br>
+</td>
+<td style="text-align: left;" valign="top">
+<b>Expected<br>
+Menu Items</b><br>
+</td>
+<td style="text-align: left;" valign="top">
+<b>Status</b><br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" valign="top">
+File
+</td>
+<td style="text-align: left;" valign="top">
+New<br>
+Open File, Open URL<br>
+Save, Save As, Save All<br>
+Revert, Move, Rename<br>
+Refresh<br>
+Print<br>
+Switch Workspace<br>
+Import, Export<br>
+Properties<br>
+Recent Files<br>
+Exit<br>
+</td>
+<td style="text-align: left;" valign="top">
+correct<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" valign="top">
+File<br>
+&nbsp;&nbsp;&nbsp;&nbsp; -&gt; New
+</td>
+<td style="text-align: left;" valign="top">
+Project<br>
+Other<br>
+Hava Project<br>
+</td>
+<td style="text-align: left;" valign="top">
+<b>Misconfigured:</b><br>
+Example<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" valign="top">
+Window
+</td>
+<td style="text-align: left;" valign="top">
+New Window<br>
+New Editor<br>
+Navigation<br>
+Preferences<br>
+Show View<br>
+Open Perspective<br>
+</td>
+<td style="text-align: left;" valign="top">
+<b>Unrelated:</b><br>
+Customize Perspective<br>
+Save Perspective As<br>
+Reset Perspective<br>
+Close Perspective<br>
+Close All Perspectives<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" valign="top">
+Window<br>
+&nbsp;&nbsp;&nbsp;&nbsp; -&gt; Show view
+</td>
+<td style="text-align: left;" valign="top">
+Hava Solution<br>
+Hava Report<br>
+Navigator<br>
+Other<br>
+</td>
+<td style="text-align: left;" valign="top">
+<b>Missing:</b><br>
+Hava Solution<br>
+Hava Report<br>
+Navigator<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;" valign="top">
+Window<br>
+&nbsp;&nbsp;&nbsp;&nbsp; -&gt; Open perspective
+</td>
+<td style="text-align: left;" valign="top">
+Hava<br>
+Other<br>
+</td>
+<td style="text-align: left;" valign="top">
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+<a id="_12_Other_UI_Elements_" name="_12_Other_UI_Elements_"></a><br>
+<h3><a id="11_Other_UI_Elements_767107534_04742393153016533" name="11_Other_UI_Elements_767107534_04742393153016533"></a>
+11: Other UI Elements
+</h3>
+<div>
+<div style="text-align: center;">
+</div>
+<table class="zeroBorder" id="jhxd" border="0" bordercolor="#000000" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left;" valign="top" width="16%">
+<b> Element</b><br>
+</td>
+<td style="text-align: center;" valign="top" width="16%">
+<div style="text-align: left;">
+<b> Expected Commands</b><br>
+</div>
+</td>
+<td style="text-align: center;" valign="top" width="16%">
+<div style="text-align: left;">
+<b>Status</b><br>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="16%">
+Navigator Context Menu<br>
+</td>
+<td valign="top" width="16%">
+New-&gt;Hava Project, New-&gt;Hava File<br>
+</td>
+<td valign="top" width="16%">
+correct<br>
+</td>
+</tr>
+<tr>
+<td valign="top" width="16%">
+Editor Context<br>
+</td>
+<td valign="top" width="16%">
+Copy/Cut/Paste, Run As, Debug As<br>
+</td>
+<td valign="top" width="16%">
+<b>Unrelated:</b><br>
+Run As -&gt; Everything but Hava, Other<br>
+Debug As -&gt; Everything but Hava, Other<br>
+</td>
+</tr>
+<tr>
+<td valign="top" width="16%">
+Main Toolbar<br>
+</td>
+<td valign="top" width="16%">
+Copy/Cut/Paste, New-&gt;Hava Project, File<br>
+</td>
+<td valign="top" width="16%">
+<b>Unrelated:</b><br>
+New-&gt; Everything but Hava, Other<br>
+</td>
+</tr>
+<tr>
+<td valign="top" width="16%">
+Perspective Switchers<br>
+</td>
+<td valign="top" width="16%">
+Hava, Other<br>
+</td>
+<td valign="top" width="16%">
+<b>Unrelated:</b><br>
+All other visible perspectives<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<a id="13_Creating_a_new_Hava_file_1350230755206283" name="13_Creating_a_new_Hava_file_1350230755206283"></a><br><hr class="pb"><a id="12_Creating_a_new_Hava_file_04_2112331342998166" name="12_Creating_a_new_Hava_file_04_2112331342998166"></a>
+<h2 style="text-align: left;"><a id="Validation_Testing__17308088280103995" name="Validation_Testing__17308088280103995"></a>Validation Testing<br>
+</h2>The primary mode for validation testing will by obtaining direct
+feedback from Steve Hackman and Loren Platzman, the project
+sponsors.&nbsp; To identify UI aspects are unclear or cumbersome,
+feedback about general usability concerns will be obtained through a
+combination of open-ended questioning and structured UI walkthrough.<br>
+<h3><a id="Basic_Usability_09522457548499_1327323384363751" name="Basic_Usability_09522457548499_1327323384363751"></a>
+Basic Usability
+</h3>
+The previous version of the IDE can serve as a basis for comparison,
+because it is currently in use effectively.&nbsp; The system can be
+considered to satisfy this category of testing if it equals or exceeds
+the usability of those features which are implemented in its simpler
+predecessor.<br>
+<h4><a id="File_Management_28348399430664_9626738465944468" name="File_Management_28348399430664_9626738465944468"></a>
+File Management<br>
+</h4>
+<p>
+Eclipse's project structure necessitates some differences in how files
+are managed.&nbsp; At minimum, without delving into the mechanics of
+Eclipse's concept of "project" and "workspace", we need to verify that
+the environment intuitively supports file management.
+</p>
+<br>
+<ul>
+<li>
+Open Hava files which are already somewhere on the filesystem<br>
+</li>
+<li>
+Create new Hava files
+</li>
+</ul>
+<h4><a id="Running_Hava_Files_23911868807_6212951990729283" name="Running_Hava_Files_23911868807_6212951990729283"></a>
+Running Hava Files
+</h4>The current IDE has a single text field, and an output panel which
+can display the result ("solution") or debugging information ("trace")
+for the Hava file presently undergoing edit.&nbsp; Because the Eclipse
+editor can open multiple Hava files at once, its running is not as
+straightforward.&nbsp; Since running Hava code is the most important
+task the system performs, validating the run interface is critical.<br>
+<br>
+<ul>
+<li>
+Run a Hava file (open the Solution view)<br>
+</li>
+<li>
+Debug a Hava file (open the Debug view)
+</li>
+<li>
+Running a specific Hava file when multiple editors are open<br>
+</li>
+</ul>
+<h3><a id="Debugging_Features_24122583066_2895116585538169" name="Debugging_Features_24122583066_2895116585538169"></a>
+Debugging Features
+</h3>
+The purpose of the new functionality introduced by this Hava IDE is to
+facilitate debugging.&nbsp; To determine whether this goal has been
+satisfied, we have test situations which address specific instances
+where better debugging assistance is desired.&nbsp; A successful
+resolution to each of these scenarios means that the Debug view made
+the problem apparent and assisted in its solution.<br>
+<h4><a id="Poker_Example_Type_Mismatch_59_07450479015488498" name="Poker_Example_Type_Mismatch_59_07450479015488498"></a>
+Poker Example: Type Mismatch<br>
+</h4>
+This example was provided by Loren Platzman.&nbsp; The following faulty Hava code fails on a type mismatch error:<br>
+<br>
+<div style="margin-left: 40px; font-family: Courier New;">
+token JACK, QUEEN, KING, ACE;<br>
+FACES = (2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE);<br>
+<br>
+token CLUB, DIAMOND, HEART, SPADE;<br>
+SUITS = (CLUB, DIAMOND, HEART, SPADE);<br>
+<br>
+struct Card(face, suit);<br>
+<br>
+function randomCard = Card(random(FACES), random(SUITS));<br>
+<br>
+averageValue = sum(i=1 to 100) {randomCard.face} / 100;<br>
+</div>
+<br style="font-family: Courier New;">
+This code fails during the summation when randomCard.face is
+non-numeric.&nbsp; Because the error occurs on an anonymous variable
+(the return value of the randomCard function), the trace is difficult
+to read because it is unclear about which value was problematic.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<br>
+</div>
+<br>
+<br clear="all">
+</div>
+<div style="display: none;" id="google-view-footer">
+<div id="maybecanedit" style="float: right;">
+<a class="google-small-link" id="editpermissionlink" href="http://docs.google.com/Doc?tab=edit&amp;dr=true&amp;id=dhbdj5v6_34d49m67zb" title="Edit this page">
+Edit this page (if you have permission)</a>
+<span style="color: rgb(103, 103, 103);">|</span>
+<input id="report-abuse-button" value="Report abuse" onclick="reportAbuse();" type="button">
+</div>
+<div style="float: left;">
+<a title="Learn more about Google Docs" class="google-small-link" href="http://docs.google.com/">
+Google Docs -- Web word processing, presentations and spreadsheets.</a>
+</div>
+<p> &nbsp;
+</p></div>
+<script><!--
+    viewOnLoad();
+    if(window.jstiming){window.jstiming.a={};window.jstiming.c=1;function k(b,d,f){var a=b.t[d];if(!a)return undefined;a=b.t[d][0];if(f!=undefined)var h=f;else h=b.t.start[0];return a-h}window.jstiming.report=function(b,d,f){var a="";if(window.jstiming.pt){a+="&srt="+window.jstiming.pt;delete window.jstiming.pt}try{if(window.external&&window.external.tran)a+="&tran="+window.external.tran;else if(window.gtbExternal.tran)a+="&tran="+window.gtbExternal.tran()}catch(h){}if(b.b)a+="&"+b.b;var e=b.t,p=e.start,
+l=[],i=[];for(var c in e)if(!(c=="start"))if(!(c.indexOf("_")==0)){var j=e[c][1];if(j)e[j]&&i.push(c+"."+k(b,c,e[j][0]));else p&&l.push(c+"."+k(b,c))}delete e.start;if(d)for(var m in d)a+="&"+m+"="+d[m];var n=[f?f:"http://csi.gstatic.com/csi","?v=3","&s="+(window.jstiming.sn?window.jstiming.sn:"writely")+"&action=",b.name,i.length?"&it="+i.join(",")+a:a,"&rt=",l.join(",")].join(""),g=new Image,o=window.jstiming.c++;window.jstiming.a[o]=g;g.onload=g.onerror=function(){delete window.jstiming.a[o]};
+g.src=n;g=null;return n}};
+
+    window.jstiming.load.name = 'published';
+    
+    
+    var urchinPage = "/View";
+
+    
+    function getXHR() {
+      if (typeof XMLHttpRequest != "undefined") {
+        return new XMLHttpRequest();
+      }
+      try { return new ActiveXObject("Msxml2.XMLHTTP.6.0") } catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP.3.0") } catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP") } catch(e) {}
+      try { return new ActiveXObject("Microsoft.XMLHTTP") } catch(e) {}
+      return null;
+    }
+
+    function reportAbuse() {
+      var req = getXHR();
+      if (req) {
+        
+          var docid = 'dhbdj5v6_34d49m67zb';
+          var posttoken = 'kOMU2iIBAAA.O4J8m1lbErt1WEvF0gCL2OkBfEeeoZJxjs5jzNFSs_k.FJpPkmvWAap6xMWL2B3XCg';
+        
+        req.onreadystatechange = function() {
+          try {
+            if (req.readyState == 4 && req.status == 200) {
+              var button = document.getElementById("report-abuse-button");
+              button.value = 'Thank you!';
+              button.disabled = true;
+            }
+          } catch (ex) {
+            
+          }
+        }
+        try {
+          req.open('POST', 'MiscCommands', true);
+          req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+          req.send('command=report_abuse&abuseDoc=' + encodeURIComponent(docid) +
+                   '&POST_TOKEN=' + encodeURIComponent(posttoken));
+        } catch (ex) {
+          
+        }
+      }
+    }
+  --></script>
+</body></html>

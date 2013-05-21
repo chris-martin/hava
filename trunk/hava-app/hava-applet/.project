@@ -1,0 +1,22 @@
+<projectDescription>
+  <name>edu.gatech.hava.applet</name>
+  <comment>A parent POM for all Hava projects. Provides a place
+    to specify common build configuration information.</comment>
+  <projects>
+    <project>edu.gatech.hava.core</project>
+    <project>edu.gatech.hava.debug</project>
+    <project>edu.gatech.hava.gui</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+    <nature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</nature>
+  </natures>
+</projectDescription>

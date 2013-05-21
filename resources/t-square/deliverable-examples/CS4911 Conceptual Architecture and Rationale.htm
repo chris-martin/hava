@@ -1,0 +1,261 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List
+href="CS4911%20Conceptual%20Architecture%20and%20Rationale_files/filelist.xml">
+<title>CS4911 Conceptual Architecture and Rationale</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Robert Waters</o:Author>
+  <o:LastAuthor>Robert Waters</o:LastAuthor>
+  <o:Revision>12</o:Revision>
+  <o:TotalTime>90</o:TotalTime>
+  <o:Created>2006-01-04T17:52:00Z</o:Created>
+  <o:LastSaved>2008-05-12T16:02:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>655</o:Words>
+  <o:Characters>3734</o:Characters>
+  <o:Company>Home</o:Company>
+  <o:Lines>31</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>4381</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayBackgroundShape/>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'><span style='font-size:24.0pt'>CS4911
+Design Documentation <o:p></o:p></span></h1>
+
+<h2>Architecture and Rationale</h2>
+
+<p class=MsoNormal><span style='font-family:Arial'>After you have completed an
+initial version of your Vision statement and use cases, you will have a list of
+customer features expressed in your Product Backlog. You next need to convert this
+into a design. The first step for your design is to create the Software
+Architecture for your application. There are <span class=GramE>many different
+architectures</span> that you might develop for your system, and you will need
+to generate a few and then choose between them. You should document the reasons
+why you choose a particular architecture in your Design&nbsp; Rationale.
+Rationale is important for the long-term maintenance and enhance of your
+application. Unlike other programming projects you may have done in other classes,
+your Senior Design project will live on after you leave the class. This means
+your design information will be critical to the ability of your customer to
+maintain and evolve your application over time.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>Be to discuss in rationale
+the alternative designs and why you choose the one you did.<span
+style='mso-spacerun:yes'>  </span>If you only could come up with one design,
+you either have too simple a project, or haven’t really considered all the
+options available.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>Architecture is the highest,
+most abstract level of design. It should give a representation of how your
+application will interact with external entities and how it is organized. We
+talk about architecture all the time with standard terms like: “Client-Server”,
+“Layered”, “Event-Driven”, or “Pipe and Filter”. These are commonly called
+Architectural Styles. Your application may use one or more of these to help you
+achieve an optimal design for your system. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>It is important to provide
+both a static and dynamic view of your architecture. A static view might, for
+example, be expressed with a UML Package diagram. A dynamic view could be a
+system-level sequence diagram or a textual description of how functionality is
+realized at the architectural level. Each component should be indentified as to
+what functionality it provides and how it interoperates with other components
+to form a working system.<o:p></o:p></span></p>
+
+<h2>Data</h2>
+
+<p class=MsoNormal><span style='font-family:Arial'>Many systems involve the
+management of persistent data, either through files or a database. How the data
+is organized is another aspect of design, and its expression is called a <i>data
+model</i>. If you have taken a database course, then you are already familiar
+with Entity-Relationship (ER) diagrams. These contain virtually the same
+concepts as do UML class diagrams, and the latter can be used if you are
+unfamiliar with the former. Your design documentation should include one of
+these visual descriptions of how any persistent data will be stored.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>If your application uses
+flat files or XML data files, then the format for those files should be
+presented and documented.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:13.5pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;font-family:Arial'>Detailed Design<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>Decompose the high-level
+architecture into the lower level classes and document their dynamic
+behavior.<span style='mso-spacerun:yes'>  </span>If a non-OO application,
+document the static and dynamic behavior of the application.<span
+style='mso-spacerun:yes'>  </span>Typically, for UML this would be a class
+diagram and any of: state diagram, sequence diagram, collaboration diagram, or
+activity diagram.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>For web applications, this
+might include a page navigation graph, along with summaries of the scripts
+running on each page.<o:p></o:p></span></p>
+
+<h2>GUI</h2>
+
+<p class=MsoNormal><span style='font-family:Arial'>Many modern systems are
+interactive. That is, the user interacts with the system using some form of
+display screen using which data can be entered and results presented. Well-designed
+GUIs are essential to successful systems because they are the most visible part
+of the system. As such, it is important to get early and frequent feedback from
+users about their reactions. This can take the form of a prototype, but if this
+is infeasible, then mocked up screen shots can be substituted. Your design
+documentation should include a description of your user interface design.<span
+style='mso-spacerun:yes'>  </span>You should explain what the viewer is looking
+at for each screen.<o:p></o:p></span></p>
+
+<h2>Validation</h2>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-family:Arial'>Every
+stage of software development should be validated. This is particularly true of
+design, because design is the most accessible description of the problem's
+solution. There are a variety of ways to validate software designs, but all of
+them involve comparing the design with the user needs. Examples include design
+reviews with customers, GUI prototypes, and requirements tracing. You should
+document the steps that you have taken to validate your design and the results
+of that validation.<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

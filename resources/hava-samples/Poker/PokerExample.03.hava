@@ -1,0 +1,77 @@
+// CARD ELEMENTS
+
+// Faces
+token JACK, QUEEN, KING, ACE;
+FACES = (2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE);
+
+token CLUB, DIAMOND, HEART, SPADE;
+SUITS = (CLUB, DIAMOND, HEART, SPADE);
+
+// Cards
+struct Card(face, suit);
+function randomCard = Card(random(FACES), random(SUITS));
+
+// Hands
+handSize = 5;
+function randomHand = collect(i=1 to handSize) {randomCard};
+
+// Returns true if hand contains no duplicate cards
+function isValidHand(hand) = 
+  first(i=2 to handSize, j=1 to i-1 | hand[i]==hand[j]) {ERROR} != ERROR;
+
+
+// POKER HAND TYPES
+
+function isFullHouse(hand) = (key(hand)==13);  
+function isStraight(hand) = (key(hand)==5) && (
+    (hiFaceIndex(hand)-lowFaceIndex(hand)==4) 
+    ||
+    (faceCountInHand(ACE, hand)==1 && hiFaceIndexExcludingAce(hand)==5)
+  );
+function isFlush(hand) = suitCountInHand(hand[1].suit, hand)==5;
+function isThreeOfAKind(hand) = key(hand)==11;
+function isTwoPair(hand) = key(hand)==9;
+function isOnePair(hand) = key(hand)==7;
+function isNoPair(hand) = key(hand)==5 && !isStraight(hand);
+
+
+// SERVICE FUNCTIONS
+
+// Number of times a suit appears in a hand
+function suitCountInHand(suit, hand) = sum(card in hand) {card.suit==suit};
+
+// Number of times a face appears in a hand
+function faceCountInHand(face, hand) = 
+  sum(card in hand) {card.face==face};
+
+// Key
+function key(hand) = sum(card in hand) {faceCountInHand(card.face, hand)};
+
+// Face indexing (ace is high)
+function faceToIndex(face) = face:FACES;
+function faceFromIndex(k) = 
+  if (1<=k<=FACES.listSize) {FACES[k]} else {ERROR};
+
+// Lowest or highest face in hand by index
+function lowFaceIndex(hand) = min(card in hand) {faceToIndex(card.face)};
+function hiFaceIndex(hand) = max(card in hand) {faceToIndex(card.face)};
+function hiFaceIndexExcludingAce(hand) = 
+  max(card in hand | card.face != ACE) {faceToIndex(card.face)};
+
+
+// SAMPLE STATISTICS
+
+N = 10000;
+
+stats = 
+  sum(i=1 to N, hand=randomHand | isValidHand(hand))
+    {(isFullHouse(hand), isStraight(hand), isFlush(hand), 
+      isThreeOfAKind(hand), isTwoPair(hand), isOnePair(hand), isNoPair(hand))};
+
+spFullHouse = stats[1]/N;
+spStraight = stats[2]/N; 
+spFlush = stats[3]/N;
+spThreeOfAKind = stats[4]/N;
+spTwoPair = stats[5]/N;
+spOnePair = stats[6]/N;
+spNoPair = stats[7]/N;

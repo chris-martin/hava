@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>edu.gatech.hava</groupId>
+    <artifactId>hava-parent</artifactId>
+    <version>1.0.0.X</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.gatech.hava</groupId>
+  <artifactId>edu.gatech.hava.gui</artifactId>
+  <version>1.0.0.X</version>
+
+  <name>
+    Hava GUI Components
+  </name>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.gatech.hava</groupId>
+      <artifactId>edu.gatech.hava.debug</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.4</source>
+          <target>1.4</target>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>
+

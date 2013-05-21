@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="edu.gatech.hava.hdt.builder"
+         name="Hava Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder hasNature="true">
+         <run class="edu.gatech.hava.hdt.builder.HavaBuilder"/>
+      </builder>
+   </extension>
+
+   <extension
+         id="edu.gatech.hava.hdt.nature"
+         name="Hava Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run class="edu.gatech.hava.hdt.builder.HavaNature"/>
+      </runtime>
+      <builder id="edu.gatech.hava.hdt.builder"/>
+   </extension>
+
+   <extension
+         id="edu.gatech.hava.hdt.builder.marker.problem"
+         name="Hava Problem"
+         point="org.eclipse.core.resources.markers">
+      <persistent
+            value="true"/>
+      <super
+            type="org.eclipse.core.resources.problemmarker"/>
+      <super
+            type="org.eclipse.core.resources.textmarker"/>
+   </extension>
+
+</plugin>
+

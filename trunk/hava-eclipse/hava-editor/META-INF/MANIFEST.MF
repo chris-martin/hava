@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hava Editor
+Bundle-SymbolicName: edu.gatech.hava.hdt.editor;singleton:=true
+Bundle-Version: 1.0.0.X
+Bundle-Vendor: gatech.edu
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.core.resources,
+ edu.gatech.hava.core;bundle-version="1.0.0.X",
+ org.eclipse.ui.ide,
+ org.eclipse.debug.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.part,
+ org.eclipse.core.filebuffers,
+ org.eclipse.jface.text,
+ org.eclipse.jface.text.presentation,
+ org.eclipse.jface.text.rules,
+ org.eclipse.jface.text.source,
+ org.eclipse.swt.graphics,
+ org.eclipse.swt.widgets,
+ org.eclipse.ui.editors.text,
+ org.eclipse.ui.texteditor
+Bundle-ClassPath: .
